@@ -1,0 +1,23 @@
+.chat-views
+{
+    background-color: #39414e;
+    color:white;
+    font-family: roboto;
+}
+.chat-views .chat-header
+{
+    padding:10px 0;
+}
+.container .row .chat-views .row .image-sizing
+{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+.chat-header h3
+{
+    font-size: 0.9em;
+    margin:0;
+    padding:8px 0;
+    letter-spacing: 4px;
+}
