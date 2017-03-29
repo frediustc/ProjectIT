@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'assignment';
+  src:  url('fonts/assignment.eot?dmnebv');
+  src:  url('fonts/assignment.eot?dmnebv#iefix') format('embedded-opentype'),
+    url('fonts/assignment.ttf?dmnebv') format('truetype'),
+    url('fonts/assignment.woff?dmnebv') format('woff'),
+    url('fonts/assignment.svg?dmnebv#assignment') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ddfj-"], [class*=" ddfj-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'assignment' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ddfj-addicon:before {
+  content: "\e902";
+}
+.ddfj-bellicon:before {
+  content: "\e903";
+}
+.ddfj-charticon:before {
+  content: "\e904";
+}
+.ddfj-downloadicon:before {
+  content: "\e905";
+}
+.ddfj-menuicon:before {
+  content: "\e906";
+}
+.ddfj-msgicon:before {
+  content: "\e907";
+}
+.ddfj-ordericon:before {
+  content: "\e908";
+}
+.ddfj-reporticon:before {
+  content: "\e909";
+}
+.ddfj-usericon:before {
+  content: "\e90a";
+}
+.ddfj-crossicon:before {
+  content: "\e900";
+}
+.ddfj-download2icon:before {
+  content: "\e901";
+}
+.ddfj-uploadicon:before {
+  content: "\e90c";
+}
+
