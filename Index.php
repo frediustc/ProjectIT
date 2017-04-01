@@ -58,8 +58,26 @@ include("php/include/menu.php");
             </div>
         </div>
     </div>
-    <div class="col-sm-3 ok">
-        <h1>ok</h1>
+    <div class="col-sm-3 notif">
+        <div>
+            <h3 class="text-center notif-title">Notifications</h3>
+            <ul class="list-unstyled notif-list">
+                <li>
+                    <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                    <p>Has been rented by Barklays</p>
+                    <p class="disabled">
+                        2 days ago<span class="notif-type ddfj-usericon"></span>
+                    </p>
+                </li>
+                <li>
+                    <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                    <p>Has been rented by Barklays</p>
+                    <p class="disabled">
+                        2 days ago<span class="notif-type ddfj-usericon"></span>
+                    </p>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 
