@@ -78,9 +78,13 @@ html, body
     margin-top: 0;
 }
 /*no space*/
-.row.no-space [class*="col-"]
+.row.no-padding [class*="col-"]
 {
     padding:0;
+}
+.row.no-col-padding > [class*="col-"]
+{
+    padding: 0;
 }
 /*list*/
 ul.list-continous
@@ -102,7 +106,7 @@ ul.list-continous li:before
     border: 2px solid #29a9dc;
     position:absolute;
     left: 16px;
-    top:8px;   
+    top:8px;
 }
 ul.list-continous li:after
 {
@@ -113,7 +117,7 @@ ul.list-continous li:after
     background-color: #29a9dc;
     position:absolute;
     top:20px;
-    
+
 }
 ul.list-continous li:last-child:after
 {

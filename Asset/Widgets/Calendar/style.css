@@ -1,0 +1,160 @@
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th
+{
+    margin:0;
+    padding:0;
+    border:none;
+    border-spacing: 0;
+}
+
+body{
+    background: #e0e0e0;
+    font-family: roboto, Arial, verdana;
+}
+#fullcal
+{
+    background-color: white;
+}
+/*my style*/
+#calendar
+{
+    background-color: white;
+    padding:20px 40px;
+    color:#2b2b37;
+    font-weight: 100;
+    font-size: 18px;
+}
+#calendar h1
+{
+    margin:10px 0;
+    padding:5px 0;
+}
+#calendar .ui-datepicker, #calendar .ui-datepicker table
+{
+    width:100%;
+}
+#calendar .ui-datepicker-title
+{
+    text-align: center;
+    font-weight: bold;
+}
+#calendar .ui-datepicker table {
+    margin-top:10px;
+}
+#calendar .ui-datepicker td, #calendar .ui-datepicker th
+{
+    width: calc(100% / 7);
+    text-align: center;
+    padding:5px;
+    position: relative;
+}
+#calendar .ui-datepicker a.ui-state-default
+{
+    width:40px;
+    line-height: 36px;
+    display: inline-block;
+    color:#2b2b37;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border:2px solid transparent;
+    font-weight: 400;
+    transition: all linear 0.3s;
+}
+#calendar .ui-datepicker .ui-datepicker-unselectable
+{
+    opacity:0.5;
+}
+#calendar .ui-datepicker a.ui-state-highlight
+{
+    border-color: #59d4db;
+    background-color: #59d4db;
+    color:white;
+}
+#calendar .ui-datepicker a.ui-state-apt::after
+{
+    content: "";
+    position:absolute;
+    bottom:5px;
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    background-color: #59d4db;
+}
+#calendar .ui-datepicker a.ui-state-default:hover, #calendar .ui-datepicker a.ui-state-active
+{
+    border-color: #59d4db;
+    text-decoration: none;
+}
+#appointement-view
+{
+    background-color: #2b2b37;
+    color:white;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+}
+#appointement-view h1
+{
+    font-size:7em;
+    font-weight: 100;
+    margin:10px 0;
+}
+#appointement-view .row a.btn
+{
+    padding:5px;
+    border-radius:50%;
+    border:1px solid white;
+    color:white;
+}
+#appointement-view .row a.btn:hover
+{
+    color:#59d4db;
+    border-color:#59d4db;
+}
+#appointement-view h1 small
+{
+    font-size: 0.15em;
+    color:white;
+    display: block;
+}
+#list-appointement
+{
+    padding:10px;
+    color:#cacad9;
+    height: 250px;
+    overflow-y: scroll;
+}
+#list-appointement li
+{
+    padding:5px 0;
+}
+#list-appointement .appointement-time
+{
+    display: block;
+    opacity:0.5;
+}
+#list-appointement .at
+{
+    display: block;
+    color:#59d4db;
+    font-size: 0.7em;
+}
+#appointement-view form
+{
+    display: none;
+    position: absolute;
+    top:50px;
+    left:0;
+    width:100%;
+    height: calc(100% - 50px);
+    background-color: #2b2b37;
+    padding:40px;
+}
+#appointement-view form h1
+{
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
