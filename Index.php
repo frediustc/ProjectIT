@@ -16,8 +16,7 @@ include("php/include/menu.php");
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-9 ok">
-        <h1>ok</h1>
+    <div class="col-sm-9">
         <div class="row" id="fullcal">
             <div class="col-sm-5" id="appointement-view">
                 <div class="row">
@@ -54,6 +53,14 @@ include("php/include/menu.php");
             </div>
             <div class="col-sm-7 text-uppercase" id="calendar">
                 <h1 class="text-right"><span class="ddfj-menuicon"></span><span class="actual-time">12:04 AM</span></h1>
+            </div>
+        </div>
+        <div class="row text-center ok">
+            <div class="col-sm-6">
+                <h1>ok</h1>
+            </div>
+            <div class="col-sm-6">
+                <h1>ok</h1>
             </div>
         </div>
     </div>
