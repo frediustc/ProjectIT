@@ -4,16 +4,10 @@ $css = "Admin.dashboard";
 include("php/include/head.php");
 include("php/include/menu.php");
 ?>
-<div class="row text-center">
-    <div class="col-sm-4 ok">
-        <h1>ok</h1>
-    </div>
-    <div class="col-sm-4 ok">
-        <h1>ok</h1>
-    </div>
-    <div class="col-sm-4 ok">
-        <h1>ok</h1>
-    </div>
+<div class="row text-center charts">
+    <div class="col-sm-4 chart" id="visitors"></div>
+    <div class="col-sm-4 chart" id="orders"></div>
+    <div class="col-sm-4 chart" id="reports"></div>
 </div>
 <div class="row">
     <div class="col-sm-9">
