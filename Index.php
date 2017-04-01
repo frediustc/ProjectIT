@@ -11,6 +11,7 @@ include("php/include/menu.php");
 </div>
 <div class="row">
     <div class="col-sm-9">
+        <!-- calendar-->
         <div class="row" id="fullcal">
             <div class="col-sm-5" id="appointement-view">
                 <div class="row">
@@ -49,15 +50,53 @@ include("php/include/menu.php");
                 <h1 class="text-right"><span class="ddfj-menuicon"></span><span class="actual-time">12:04 AM</span></h1>
             </div>
         </div>
-        <div class="row text-center ok">
-            <div class="col-sm-6">
-                <h1>ok</h1>
-            </div>
-            <div class="col-sm-6">
-                <h1>ok</h1>
+        <!--orders and reports-->
+        <div class="row">
+            <!-- reports-->
+            <div class="col-xs-8">
+                <h3>Lastest Reports</h3>
+                <table class="lastest-reports table">
+                    <thead class="text-uppercase">
+                        <tr>
+                            <th><label for="check-all-reports"><span class="check-all-reports chk-lab"></span></label>
+                                <input type="checkbox" name="check-all-reports" id="check-all-reports" value="check-all-reports"/></th>
+                            <th>Customers</th>
+                            <th>Reports</th>
+                            <th>Reports Date</th>
+                            <th class="text-center"><button class="btn btn-danger delete-all-reports">Delete</button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="check-report-1"><span class="chk-lab actived"></span></label>
+                                <input type="checkbox" name="check-report-1"  id="check-report-1" value="check-report-1"/></td>
+                            <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                            <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
+                            <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                            <td class="text-capitalize text-center"><button class="btn btn-danger">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="check-report-1"><span class="chk-lab"></span></label>
+                                <input type="checkbox" name="check-report-1"  id="check-report-1" value="check-report-1"/></td>
+                            <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                            <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                            <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                            <td class="text-capitalize text-center"><button class="btn btn-danger">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td><label for="check-report-1"><span class="chk-lab"></span></label>
+                                <input type="checkbox" name="check-report-1"  id="check-report-1" value="check-report-1"/></td>
+                            <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                            <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                            <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                            <td class="text-capitalize text-center"><button class="btn btn-danger">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+    <!--notification display-->
     <div class="col-sm-3 notif">
         <h3 class="text-center notif-title">Notifications</h3>
         <ul class="list-continous notif-list">
@@ -90,6 +129,27 @@ include("php/include/menu.php");
                 </p>
             </li>
             <li class="rents">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="rents">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="uploads">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="uploads">
                 <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
                 <p>Has been rented by Barklays</p>
                 <p class="disabled">

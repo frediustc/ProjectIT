@@ -28,6 +28,11 @@
     border-radius: 5px;
     color:#fff;
     cursor: pointer;
+    opacity: 0.8;
+}
+.notif-list li:hover
+{
+    opacity:1;
 }
 .notif-list li.messages, .notif-list li.messages::after
 {
@@ -77,4 +82,97 @@
 {
     border-bottom:1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 10px;
+}
+
+/*table reports*/
+.table.lastest-reports
+{
+    border-bottom: 2px solid #ddd;
+    text-align: left;
+    background-color: white;
+}
+.table.lastest-reports thead
+{
+    font-size: 12px;
+    background-color: #2B2B37;
+    color:white;
+    border-bottom: none;
+}
+.table.lastest-reports a
+{
+    color: #627987;
+}
+.table.lastest-reports th
+{
+    min-width:120px;
+}
+.table.lastest-reports td, .table.lastest-reports th
+{
+    padding:15px 5px;
+}
+.table.lastest-reports th:first-child
+{
+    min-width: 20px;
+}
+.table.lastest-reports .chk-lab.actived
+{
+    border: #0699CE solid 8px;
+}
+.table.lastest-reports .chk-lab
+{
+    display:block;
+    width:20px;
+    cursor: pointer;
+    height:20px;
+    border:2px solid #ccc;
+    background-color: transparent;
+    border-radius: 50%;
+    position:relative;
+    top:5px;
+    box-sizing: border-box;
+    left:5px;
+    transition: all linear 0.2s;
+    margin-right: 10px;
+}
+.table.lastest-reports input[type="checkbox"]
+{
+    display: none;
+}
+.table.lastest-reports tbody tr
+{
+    transition: all linear 0.5s;
+    background-color: white;
+    -moz-transform: scale(1);
+}
+.table.lastest-reports tbody tr:hover
+{
+    background-color: #0699CE;
+    color:white;
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index:10;
+}
+.table.lastest-reports tbody tr:hover a
+{
+    color:white;
+}
+.table.lastest-reports tbody tr:hover .chk-lab
+{
+    border-color: white;
+}
+.img-sizing
+{
+    width:30px;
+    height:30px;
+    float:left;
+    margin-right: 10px;
+}
+.btn-danger
+{
+    border:none;
+    padding:5px 30px;
+    background-color: #FF2A55;
 }
