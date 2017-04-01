@@ -135,4 +135,15 @@ h1
 {
     color:#29a9dc;
 }
-.actualTimeTop
+.footer
+{
+    color:white;
+    padding:20px 0;
+    background-color: #2B2B37;
+    margin-top: 20px;
+}
+.footer *
+{
+    padding:0;
+    margin:0;
+}
