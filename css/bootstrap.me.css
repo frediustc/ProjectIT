@@ -90,40 +90,44 @@ html, body
 ul.list-continous
 {
     list-style-type: none;
-    margin:0;
-    padding:0;
 }
 ul.list-continous li
 {
-    padding-left: 40px;
+    box-sizing: padding-box;
+    margin-left: 20px;
     position: relative;
 }
-ul.list-continous li:before
+ul.list-continous li::before,
+ul.list-continous li::after
 {
-    content:"";
-    padding:4px;
-    border-radius:50%;
-    border: 2px solid #29a9dc;
+    content: '';
     position:absolute;
-    left: 16px;
-    top:8px;
 }
-ul.list-continous li:after
+ul.list-continous li::before
 {
-    content:"";
+    width:10px;
+    height:10px;
+    border:2px solid red;
+    left:-20px;
+    top:calc(50% - 2.5px);
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+ul.list-continous li::after
+{
     width:2px;
-    height:calc(100% - 12px);
-    left: 21px;
-    background-color: #29a9dc;
-    position:absolute;
-    top:20px;
-
+    height:calc(100% + 7.5px);
+    background-color: red;
+    left:-16px;
+    top:calc(50% + 7.5px);
 }
-ul.list-continous li:last-child:after
+ul.list-continous li:last-child::after
 {
-    height:calc(100% - 15px);
+    height:calc(50% - 7.5px);
 }
-
 /*shadoow*/
 .bx-shdw
 {

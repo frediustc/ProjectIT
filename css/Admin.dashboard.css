@@ -6,3 +6,75 @@
 {
     border:1px solid '#E1E1E1';
 }
+/*notif*/
+.notif > div > *
+{
+    padding:10px 30px;
+    margin:0;
+}
+.notif-list
+{
+    padding:0 30px;
+    font-size: 12px;
+}
+.notif-list p
+{
+    margin:2px;
+}
+.notif-list li
+{
+    padding: 5px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    color:#fff;
+    cursor: pointer;
+}
+.notif-list li.messages, .notif-list li.messages::after
+{
+    background-color: #05AF76;
+}
+.notif-list li.messages::before
+{
+    border-color: #05AF76;
+}
+.notif-list li.uploads, .notif-list li.uploads::after
+{
+    background-color: #8257B5;
+}
+.notif-list li.uploads::before
+{
+    border-color: #8257B5;
+}
+.notif-list li.rents, .notif-list li.rents::after
+{
+    background-color: #FF2A55;
+}
+.notif-list li.rents::before
+{
+    border-color: #FF2A55;
+}
+.notif-list li.orders, .notif-list li.orders::after
+{
+    background-color: #0699CE;
+}
+.notif-list li.orders::before
+{
+    border-color: #0699CE;
+}
+.notif-list li.reports, .notif-list li.reports::after
+{
+    background-color: #FF5555;
+}
+.notif-list li.reports::before
+{
+    border-color: #FF5555;
+}
+.notif-list .disabled
+{
+    opacity: 0.6;
+}
+.notif-list li h5
+{
+    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
