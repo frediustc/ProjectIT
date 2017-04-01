@@ -12,6 +12,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap.me.css" rel="stylesheet" />
     <link href="css/font/myIcon/style.css" rel="stylesheet" />
+    <link href="http://calendar/style.css" rel="stylesheet" />
     <link href="css/admin.css" rel="stylesheet" />
     <link href="css/<?php echo $css; ?>.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

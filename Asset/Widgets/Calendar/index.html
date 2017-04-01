@@ -64,34 +64,13 @@
         </div>
     </div>
     <script src="http://projectit/js/plugins/jquery.min.js"></script>
-    <script src="./jquery-ui.min.js"></script>
+    <script src="http://projectit/js/plugins/jquery-ui.min.js"></script>
     <script>
     $('#calendar').datepicker({
         inline: true,
         firstDay: 1,
         showOtherMonths: true,
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-    });
-
-    $('a.ui-state-default').click(function(){
-        $(this).addClass("ui-state-apt");
-    });
-    $('.view-change').click(function(){
-        var Id = $(this).attr('id');
-        var ww = $(window).width();
-        switch (Id) {
-            case 'mobile':
-                $('.container').css({width : 480 + 'px'});
-                break;
-            case 'tablet':
-                $('.container').css({width : 768 + 'px'});
-                break;
-            case 'desktop':
-                $('.container').css({width : 1200 + 'px'});
-                break;
-            default:
-                null;
-        }
     });
     </script>
 </body>
