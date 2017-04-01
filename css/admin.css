@@ -6,7 +6,7 @@ html, body
 body
 {
     color: #627987;
-    font-family: roboto;
+    font-family: roboto, Arial, verdana, serif, sans-serif;
     font-size: 12px;
     background-color:#f8f8f8;
 }
@@ -16,7 +16,7 @@ body
 #menuTop
 {
     border-radius:0;
-    border-bottom:0; 
+    border-bottom:0;
     background-color: #29a9dc;
 }
 .navbar-brand
@@ -50,7 +50,7 @@ button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-
 {
     margin: 0;
 }
-#menuTop .navbar-right a 
+#menuTop .navbar-right a
 {
     padding-left:5px;
     padding-right:5px;
@@ -68,7 +68,7 @@ button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-
     width:90px;
     overflow: hidden;
 }
-#menuLeft .nav a 
+#menuLeft .nav a
 {
     color:#708899;
     box-sizing: border-box;

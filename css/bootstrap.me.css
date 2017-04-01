@@ -123,3 +123,9 @@ ul.list-continous li:last-child:after
 {
     height:calc(100% - 15px);
 }
+
+/*shadoow*/
+.bx-shdw
+{
+    box-shadow: 0 0 3px #878787;
+}
