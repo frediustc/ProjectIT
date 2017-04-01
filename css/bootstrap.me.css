@@ -92,36 +92,7 @@ ul.list-continous
     list-style-type: none;
     margin:0;
     padding:0;
-}
-ul.list-continous li
-{
-    padding-left: 40px;
-    position: relative;
-}
-ul.list-continous li:before
-{
-    content:"";
-    padding:4px;
-    border-radius:50%;
-    border: 2px solid #29a9dc;
-    position:absolute;
-    left: 16px;
-    top:8px;
-}
-ul.list-continous li:after
-{
-    content:"";
-    width:2px;
-    height:calc(100% - 12px);
-    left: 21px;
-    background-color: #29a9dc;
-    position:absolute;
-    top:20px;
-
-}
-ul.list-continous li:last-child:after
-{
-    height:calc(100% - 15px);
+    box-sizing: padding-box;
 }
 
 /*shadoow*/
