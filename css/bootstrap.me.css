@@ -108,7 +108,7 @@ ul.list-continous li::before
     width:10px;
     height:10px;
     border:2px solid red;
-    left:-20px;
+    left:-30px;
     top:calc(50% - 2.5px);
     -o-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -121,7 +121,7 @@ ul.list-continous li::after
     width:2px;
     height:calc(100% + 7.5px);
     background-color: red;
-    left:-16px;
+    left:-26px;
     top:calc(50% + 7.5px);
 }
 ul.list-continous li:last-child::after
