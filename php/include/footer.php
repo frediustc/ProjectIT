@@ -26,6 +26,28 @@
     createChart('#orders', ord_list, 'Orders', '#FE7167');
     createChart('#reports', rep_list, 'Reports', '#00C484'); " : null; ?>
     </script>
+    <script>
+        jQuery(document).ready(function() {
+            function switchCheck(_clicked, _affected)
+            {
+                if($(_clicked).hasClass('actived')) {
+                    $(_affected).removeClass('actived');
+                }
+                else {
+                    $(_affected).addClass('actived');
+                }
+            }
+            $('.chk-lab').click(function() {
+                if($(this).hasClass('check-all-reports'))
+                {
+                    switchCheck(this, '.chk-lab');
+                }
+                else {
+                    switchCheck(this, this);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
