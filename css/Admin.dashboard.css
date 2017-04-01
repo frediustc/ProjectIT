@@ -182,9 +182,17 @@ btn-danger.disabled
 }
 .new-user-pp
 {
+    display: inline-block;
+    color:white;
     width:50px;
     height:50px;
     background-color: #8257B5;
     font-size: 30px;
-    line-height: 50px
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.new-user-registed [class*="col-xs-4"]
+{
+    background-color: white;
+    padding:15px;
 }

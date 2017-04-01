@@ -53,12 +53,12 @@ include("php/include/menu.php");
         <!--orders and reports-->
         <div class="row">
             <?php include('.\php\include\AdminDashboard\reports.php'); ?>
-            <div class="col-xs-4">
+            <div class="col-xs-4 new-user-registed">
                 <h3 class="text-right text-capitalize">14 New Registrations</h3>
                 <div class="row">
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/2.jpg" alt="F" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -66,7 +66,7 @@ include("php/include/menu.php");
                     </div>
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/3.jpg" alt="A" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -74,7 +74,7 @@ include("php/include/menu.php");
                     </div>
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/1.jpg" alt="B" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -84,7 +84,7 @@ include("php/include/menu.php");
                 <div class="row">
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/0.jpg" alt="L" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -92,7 +92,7 @@ include("php/include/menu.php");
                     </div>
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/1.jpg" alt="K" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -100,7 +100,33 @@ include("php/include/menu.php");
                     </div>
                     <div class="col-xs-4 text-center">
                         <div>
-                            <img src="media/images/pp/1.jpg" alt="user pp" class="new-user-pp img-circle"/>
+                            <img src="media/images/pp/2.jpg" alt="P" class="new-user-pp img-circle"/>
+                        </div>
+                        <p>
+                            Fredius Tout Court
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 text-center">
+                        <div>
+                            <img src="media/images/pp/0.jpg" alt="L" class="new-user-pp img-circle"/>
+                        </div>
+                        <p>
+                            Fredius Tout Court
+                        </p>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <div>
+                            <img src="media/images/pp/1.jpg" alt="K" class="new-user-pp img-circle"/>
+                        </div>
+                        <p>
+                            Fredius Tout Court
+                        </p>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <div>
+                            <img src="media/images/pp/2.jpg" alt="P" class="new-user-pp img-circle"/>
                         </div>
                         <p>
                             Fredius Tout Court
@@ -173,5 +199,4 @@ include("php/include/menu.php");
         </ul>
     </div>
 </div>
-
 <?php include("php/include/footer.php");?>
