@@ -29,25 +29,45 @@
     color:#fff;
     cursor: pointer;
 }
-.notif-list li.messages 
+.notif-list li.messages, .notif-list li.messages::after
 {
     background-color: #05AF76;
 }
-.notif-list li.uploads
+.notif-list li.messages::before
+{
+    border-color: #05AF76;
+}
+.notif-list li.uploads, .notif-list li.uploads::after
 {
     background-color: #8257B5;
 }
-.notif-list li.rents
+.notif-list li.uploads::before
+{
+    border-color: #8257B5;
+}
+.notif-list li.rents, .notif-list li.rents::after
 {
     background-color: #FF2A55;
 }
-.notif-list li.orders
+.notif-list li.rents::before
+{
+    border-color: #FF2A55;
+}
+.notif-list li.orders, .notif-list li.orders::after
 {
     background-color: #0699CE;
 }
-.notif-list li.reports
+.notif-list li.orders::before
+{
+    border-color: #0699CE;
+}
+.notif-list li.reports, .notif-list li.reports::after
 {
     background-color: #FF5555;
+}
+.notif-list li.reports::before
+{
+    border-color: #FF5555;
 }
 .notif-list .disabled
 {
