@@ -28,6 +28,11 @@
     border-radius: 5px;
     color:#fff;
     cursor: pointer;
+    opacity: 0.8;
+}
+.notif-list li:hover
+{
+    opacity:1;
 }
 .notif-list li.messages, .notif-list li.messages::after
 {

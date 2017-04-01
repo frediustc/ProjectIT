@@ -11,6 +11,7 @@ include("php/include/menu.php");
 </div>
 <div class="row">
     <div class="col-sm-9">
+        <!-- calendar-->
         <div class="row" id="fullcal">
             <div class="col-sm-5" id="appointement-view">
                 <div class="row">
@@ -49,15 +50,37 @@ include("php/include/menu.php");
                 <h1 class="text-right"><span class="ddfj-menuicon"></span><span class="actual-time">12:04 AM</span></h1>
             </div>
         </div>
+        <!--orders and reports-->
         <div class="row text-center ok">
+            <!-- reports-->
             <div class="col-sm-6">
-                <h1>ok</h1>
+                <h3>Reports</h3>
+                <table class="lastest-reports">
+                    <thead class="text-uppercase">
+                        <tr>
+                            <th><input type="checkbox" name="check-all-reports" /></th>
+                            <th>Customers</th>
+                            <th>Reports</th>
+                            <th>Reports Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="check-report-1" /></td>
+                            <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="" alt="pp cust"/></span>Fredius Tout Court</a></td>
+                            <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                            <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <!--orders-->
             <div class="col-sm-6">
                 <h1>ok</h1>
             </div>
         </div>
     </div>
+    <!--notification display-->
     <div class="col-sm-3 notif">
         <h3 class="text-center notif-title">Notifications</h3>
         <ul class="list-continous notif-list">
@@ -90,6 +113,27 @@ include("php/include/menu.php");
                 </p>
             </li>
             <li class="rents">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="rents">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="uploads">
+                <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
+                <p>Has been rented by Barklays</p>
+                <p class="disabled">
+                    2 days ago<span class="notif-type ddfj-usericon"></span>
+                </p>
+            </li>
+            <li class="uploads">
                 <h5 class="text-capitalize"><b>Fredius Tout Court</b></h5>
                 <p>Has been rented by Barklays</p>
                 <p class="disabled">
