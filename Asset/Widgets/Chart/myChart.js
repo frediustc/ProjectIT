@@ -21,7 +21,7 @@ function createChart(_el, _list, _title, _color)
         legend:{enabled: false},
         plotOptions:{areaspline:{
             color: _color,
-            fillOpacity: 0.9,
+            fillOpacity: 0.75,
             marker:{enabled: false},
             pointIntervalUnit: 'day',
             pointStart: Date.UTC(_Y, _M, _st, 0, 0, 0)}
