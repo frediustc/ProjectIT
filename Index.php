@@ -5,7 +5,7 @@ $rep = "./";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 ?>
-<div class="row text-center charts">
+<div class="row text-center">
     <div class="col-sm-4">
         <div class="box box-top" id="visitors">
 
