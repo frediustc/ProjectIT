@@ -146,3 +146,48 @@ ul.list-continous li:last-child::after
 {
     width:50%;
 }
+/*boxes*/
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    border: 0 solid #d2d6de;
+    width: 100%;
+    -o-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.box-top
+{
+    border-top-width: 3px;
+}
+.box-bottom
+{
+    border-bottom-width: 3px;
+}
+.box-left
+{
+    border-left-width: 3px;
+}
+.box-right
+{
+    border-right-width: 3px;
+}
+.box-primary
+{
+    border-color: #0699CE;
+}
+.box-warning
+{
+    border-color: #FF5555;
+}
+.box-danger
+{
+    border-color: #FF2A55;
+}
+.box-success
+{
+    border-color: #05AF76;
+}
