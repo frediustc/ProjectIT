@@ -28,7 +28,11 @@
     border-radius: 5px;
     color:#fff;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.6;
+    -o-box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.3);
 }
 .notif-list li:hover
 {

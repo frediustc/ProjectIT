@@ -78,11 +78,15 @@ html, body
     margin-top: 0;
 }
 /*no space*/
-.row.no-padding [class*="col-"]
+.no-padding
 {
     padding:0;
 }
-.row.no-col-padding > [class*="col-"]
+.no-margin
+{
+    margin:0;
+}
+.no-col-padding > [class*="col-"]
 {
     padding: 0;
 }
@@ -132,4 +136,13 @@ ul.list-continous li:last-child::after
 .bx-shdw
 {
     box-shadow: 0 0 3px #878787;
+}
+.option-top
+{
+    display: flex;
+    width:100%;
+}
+.half
+{
+    width:50%;
 }
