@@ -148,6 +148,7 @@ ul.list-continous li:last-child::after
 }
 /*boxes*/
 .box {
+    box-sizing: padding-box;
     position: relative;
     border-radius: 3px;
     background: #ffffff;
@@ -187,7 +188,122 @@ ul.list-continous li:last-child::after
 {
     border-color: #FF2A55;
 }
+.box-alt
+{
+    border-color: #8257B5;
+}
 .box-success
 {
     border-color: #05AF76;
+}
+/*boxes round*/
+.box-round
+{
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.box-curved
+{
+    -o-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+}
+.box-circle
+{
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*text display*/
+.text-warning
+{
+    color: #FF5555;
+}
+.text-danger
+{
+    color: #FF2A55;
+}
+.text-success
+{
+    color: #05AF76;
+}
+.text-primary
+{
+    color: #0699CE;
+}
+.text-alt
+{
+    color: #8257B5;
+}
+
+/*button to do */
+/*nb btn 3d has not been set idea is to take a black pseudo element with low opacity*/
+.btn-3d
+{
+    border-radius: 0;
+    border: 0 solid transparent;
+}
+.btn-3d-primary
+{
+    border-color: #0699CE;
+}
+.btn-3d-alt
+{
+    border-color: #8257B5;
+}
+.btn-3d-success
+{
+    border-color: #05AF76;
+}
+.btn-3d-danger
+{
+    border-color: #FF2A55;
+}
+.btn-3d-warning
+{
+    border-color: #FF5555;
+}
+.btn-3d-bottom
+{
+    border-bottom-width: 3px;
+}
+.btn-3d-top
+{
+    border-top-width: 3px;
+}
+.btn-3d-left
+{
+    border-left-width: 3px;
+}
+.btn-3d-right
+{
+    border-right-width: 3px;
+}
+
+/*button round*/
+.btn-round
+{
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.btn-curved
+{
+    -o-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+}
+.btn-circle
+{
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
