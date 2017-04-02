@@ -13,7 +13,7 @@
     <!--general js script -->
     <script src="<?php echo $rep; ?>js/general.js"></script>
     <!-- for admin dashboard -->
-    <script src="http://projectit/js/plugins/jquery-ui.min.js"></script>
+    <script src="<?php echo $rep; ?>js/plugins/jquery-ui.min.js"></script>
     <?php echo ($page === 'Admin Dashboard') ? "
     <script>
     $('#calendar').datepicker({
