@@ -74,9 +74,9 @@ include($rep . "php/include/menu.php");
         <!--orders and reports-->
         <div class="row">
             <?php include($rep . 'php/include/AdminDashboard/reports.php'); ?>
-            <div class="col-xs-4 new-user-registed">
+            <div class="col-xs-4">
                 <h3 class="text-right text-capitalize">14 New Registrations</h3>
-                <div>
+                <div class="box new-user-registed">
                     <div class="row">
                         <div class="col-xs-4 text-center">
                             <div>

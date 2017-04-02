@@ -1,42 +1,44 @@
 <!-- reports-->
 <div class="col-xs-8">
     <h3>Lastest Reports</h3>
-    <table class="lastest-reports table">
-        <thead class="text-uppercase">
-            <tr>
-                <th>Customers</th>
-                <th>Reports</th>
-                <th>Reports Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
-                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-            </tr>
-            <tr>
-                <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/2.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-            </tr>
-            <tr>
-                <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-            </tr>
-            <tr>
-                <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-            </tr>
-            <tr>
-                <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="box">
+        <table class="lastest-reports table">
+            <thead class="text-uppercase">
+                <tr>
+                    <th>Customers</th>
+                    <th>Reports</th>
+                    <th>Reports Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
+                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                </tr>
+                <tr>
+                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/2.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                </tr>
+                <tr>
+                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                </tr>
+                <tr>
+                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                </tr>
+                <tr>
+                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <!--
 //Good version
