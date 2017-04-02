@@ -5,19 +5,9 @@ $rep = "../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 ?>
-<div class="row text-center charts">
+<div class="row">
     <div class="col-sm-4">
-        <div class="box box-top" id="visitors">
-            ok
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="box box-top" id="orders">
-            ok
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="box box-top" id="reports">
+        <div class="box box-left box-primary">
             ok
         </div>
     </div>

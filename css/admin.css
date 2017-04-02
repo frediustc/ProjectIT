@@ -111,6 +111,8 @@ button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-
 .page-title
 {
     background-color: #f1f2f3;
+    height: 90px;
+    margin-bottom: 15px;
 }
 h1
 {
