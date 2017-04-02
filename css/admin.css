@@ -100,15 +100,9 @@ button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-
 }
 
 /*main container*/
-.container-fluid
+.main-container
 {
-    position:relative;
-    top:50px;
-    left:90px;
-    font-size: 14px;
-    margin:0;
-    box-sizing: padding-box;
-    max-width: calc(100% - 90px);
+    margin-left: 90px;
 }/*
 .legend [class*="legend-line-"]
 {
@@ -148,24 +142,13 @@ h1
     margin:0;
 }
 
-/*color*/
-.orange
-{
-    background-color: #8257B5;
-}
-.pink
-{
-    background-color: #FF2A55;
-}
-.green
-{
-    background-color: #0699CE;
-}
-.blue
-{
-    background-color: #FF5555;
-}
-.purple
-{
-    background-color: #05AF76;
+/*wrapper may be for full website*/
+.wrapper {
+    display: inline-block;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    width: 100%;
 }

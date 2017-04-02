@@ -1,6 +1,7 @@
-        <footer class="footer text-center">
-            <p>Copyright (c) 2017 <a href="http://www.mounti.xyz">Diomande Dro Freddy Junior Authors</a> - <b>Holala</b></p>
-        </footer>
+            <footer class="footer text-center">
+                <p>Copyright (c) 2017 <a href="http://www.mounti.xyz">Diomande Dro Freddy Junior Authors</a> - <b>Holala</b></p>
+            </footer>
+        </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="<?php echo $rep; ?>js/plugins/jquery.min.js"></script>

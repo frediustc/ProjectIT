@@ -72,13 +72,14 @@
         </li>
     </ul>
 </aside>
-<div class="container-fluid">
-    <div class="row page-title no-space">
-        <div class="col-xs-6">
-            <h1>Administrator Dashboard</h1>
+<div class="main-container">
+    <div class="wrapper">
+        <div class="row page-title">
+            <div class="col-xs-6">
+                <h1>Administrator Dashboard</h1>
+            </div>
+            <div class="col-xs-6 text-right text-capitalyze text-block-middle">
+                <p>Today's Date: <span class="todayDateTop">15 March 2017</span></p>
+                <p>Actual Time: <span class="actualTimeTop">06:56:00 PM</span></p>
+            </div>
         </div>
-        <div class="col-xs-6 text-right text-capitalyze text-block-middle">
-            <p>Today's Date: <span class="todayDateTop">15 March 2017</span></p>
-            <p>Actual Time: <span class="actualTimeTop">06:56:00 PM</span></p>
-        </div>
-    </div>
