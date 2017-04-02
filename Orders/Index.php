@@ -1,5 +1,5 @@
 <?php
-$page = "Admin Billboards";
+$page = "Admin Orders";
 $rep = "../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");

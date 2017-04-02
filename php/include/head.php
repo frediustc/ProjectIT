@@ -14,7 +14,7 @@
     <link href="<?php echo $rep; ?>css/font/myIcon/style.css" rel="stylesheet" />
     <link href="http://calendar/style.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/admin.css" rel="stylesheet" />
-    <link href="<?php echo $rep; ?>css/<?php echo $css; ?>.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

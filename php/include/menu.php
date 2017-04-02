@@ -39,7 +39,7 @@
             </a>
         </li>
         <li>
-            <a href="<?php echo $rep; ?>" class="<?php echo ($page === 'Admin Dashboard') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>Dashboard" class="<?php echo ($page === 'Admin Dashboard') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-charticon"></span>
                     <span class="text-icon">Dashboard</span>
