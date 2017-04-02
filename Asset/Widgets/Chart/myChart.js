@@ -12,7 +12,7 @@ function createChart(_el, _list, _title, _color)
     _color = (_color) ? _color : '#59d4db';
     //creating chart base on selected element
     $(_el).highcharts({
-        chart:{type: 'areaspline', height: 200, style:{fontFamily: 'roboto, Arial, verdana, serif, sans-serif'}, borderColor: '#E1E1E1', borderWidth: 1},
+        chart:{type: 'areaspline', height: 200, style:{fontFamily: 'roboto, Arial, verdana, serif, sans-serif'}},
         title:{ text: _title, align: 'left'},
         credits:{enabled: false},
         xAxis:{type: 'datetime', title:{ text: null}, gridLineWidth: 1, tickWidth: 0},
