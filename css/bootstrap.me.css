@@ -148,6 +148,7 @@ ul.list-continous li:last-child::after
 }
 /*boxes*/
 .box {
+    box-sizing: content-box;
     position: relative;
     border-radius: 3px;
     background: #ffffff;
@@ -187,7 +188,53 @@ ul.list-continous li:last-child::after
 {
     border-color: #FF2A55;
 }
+.box-alt
+{
+    border-color: #8257B5;
+}
 .box-success
 {
     border-color: #05AF76;
+}
+/*boxes round*/
+.box-round
+{
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.box-curved
+{
+    -o-border-radius: 25%;
+    -moz-border-radius: 25%;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+}
+.box-circle
+{
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.text-warning
+{
+    color: #FF5555;
+}
+.text-danger
+{
+    color: #FF2A55;
+}
+.text-success
+{
+    color: #05AF76;
+}
+.text-primary
+{
+    color: #0699CE;
+}
+.text-alt
+{
+    color: #8257B5;
 }
