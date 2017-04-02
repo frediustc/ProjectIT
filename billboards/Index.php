@@ -1,7 +1,7 @@
 <?php
-$page = "Admin Dashboard";
-$css = "Admin.dashboard";
-$rep = "./";
+$page = "Admin Billboards";
+$css = "Admin.billboards";
+$rep = "../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 ?>

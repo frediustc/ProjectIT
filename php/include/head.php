@@ -9,12 +9,12 @@
     <title><?php echo $page; ?></title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap.me.css" rel="stylesheet" />
-    <link href="css/font/myIcon/style.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>css/bootstrap.me.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>css/font/myIcon/style.css" rel="stylesheet" />
     <link href="http://calendar/style.css" rel="stylesheet" />
-    <link href="css/admin.css" rel="stylesheet" />
-    <link href="css/<?php echo $css; ?>.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>css/admin.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>css/<?php echo $css; ?>.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

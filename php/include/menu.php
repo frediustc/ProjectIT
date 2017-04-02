@@ -1,6 +1,6 @@
 <header class="navbar navbar-inverse navbar-fixed-top" id="menuTop">
     <div class="navbar-header">
-        <p class="navbar-brand text-center text-uppercase">BigAdvertiser</p>
+        <p class="navbar-brand text-center text-uppercase">HOLALA</p>
     </div>
     <ul class="nav navbar-nav navbar-right text-capitalize">
         <li>
@@ -31,7 +31,7 @@
 <aside class="sidebar sidebar-fixed-left sidebar-default" id="menuLeft">
     <ul class="nav text-uppercase text-center sidebar-fit">
         <li>
-            <a href="Index.php" class="<?php echo ($page === 'Admin Account') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>account" class="<?php echo ($page === 'Admin Account') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-usericon"></span>
                     <span class="text-icon">Account</span>
@@ -39,7 +39,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo ($page === 'Admin Dashboard') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>" class="<?php echo ($page === 'Admin Dashboard') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-charticon"></span>
                     <span class="text-icon">Dashboard</span>
@@ -47,7 +47,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo ($page === 'Admin Billboards') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>billboards/" class="<?php echo ($page === 'Admin Billboards') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-menuicon"></span>
                     <span class="text-icon">BillBoards</span>
@@ -55,7 +55,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo ($page === 'Admin Reports') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>reports/" class="<?php echo ($page === 'Admin Reports') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-reporticon"></span>
                     <span class="text-icon">Reports</span>
@@ -63,7 +63,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo ($page === 'Admin Orders') ? 'actived' : null;?>">
+            <a href="<?php echo $rep; ?>orders/" class="<?php echo ($page === 'Admin Orders') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-ordericon"></span>
                     <span class="text-icon">Orders</span>
