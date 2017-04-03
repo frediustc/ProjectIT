@@ -1,7 +1,7 @@
 <!-- reports-->
 <div class="col-xs-8">
     <h3>Lastest Reports</h3>
-    <div class="box box-top">
+    <div class="box box-top  box-danger">
         <table class="lastest-reports table">
             <thead class="text-uppercase">
                 <tr>

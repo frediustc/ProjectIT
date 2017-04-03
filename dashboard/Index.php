@@ -6,25 +6,19 @@ include($rep . "php/include/menu.php");
 ?>
 <div class="row text-center">
     <div class="col-sm-4">
-        <div class="box box-top" id="visitors">
-
-        </div>
+        <div class="box box-top box-primary" id="visitors"></div>
     </div>
     <div class="col-sm-4">
-        <div class="box box-top" id="orders">
-
-        </div>
+        <div class="box box-top box-warning" id="orders"></div>
     </div>
     <div class="col-sm-4">
-        <div class="box box-top" id="reports">
-
-        </div>
+        <div class="box box-top box-success" id="reports"></div>
     </div>
 </div>
 <div class="row" id="calendarReport">
     <div class="col-sm-9">
         <!-- calendar-->
-        <div class="box box-top">
+        <div class="box box-top box-alt">
             <div class="row fullcal">
                 <div class="col-sm-5" id="appointement-view">
                     <div class="appointement-view-content">
@@ -75,7 +69,7 @@ include($rep . "php/include/menu.php");
             <?php include($rep . 'php/include/AdminDashboard/reports.php'); ?>
             <div class="col-xs-4">
                 <h3 class="text-right text-capitalize">14 New Registrations</h3>
-                <div class="box box-top new-user-registed">
+                <div class="box box-top new-user-registed box-alt">
                     <div class="row">
                         <div class="col-xs-4 text-center">
                             <div>
