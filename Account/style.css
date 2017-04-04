@@ -1,0 +1,40 @@
+.pp-account
+{
+    width:100px;
+    line-height: 100px;
+    display: inline-block;
+    color:white;
+    margin-bottom: 20px;
+}
+.account-info-block
+{
+    margin: 10px 20px;
+    padding:10px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.account-info-block strong
+{
+    margin-left: -10px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.account-info-block strong .legend-line-right, .account-info-block strong .legend-line-left
+{
+    background-color: #0699CE;
+    height: 1px;
+    opacity: 0.2;
+}
+.update-profile
+{
+    margin: 40px 0;
+}
+.update-profile label
+{
+    margin-bottom: 20px;
+}
+.update-profile .btn
+{
+    margin-top: 20px;
+}
