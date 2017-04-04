@@ -11,21 +11,21 @@ include($rep . "php/include/menu.php");
                 <div class="col-xs-12 text-center">
                     <h1 class="text-capitalize">Actual profile</h1>
                     <h1 class="pp-account bg-success box-circle">FT</h1>
-                    <div class="account-info-block text-left">
-                        <p class="legend legend-right text-uppercase text-primary"><strong><span class="legend-text">Full Name</span></strong></p>
-                        <p class="text-capitalize"><i>Fredius Tout Court</i></p>
+                    <div class="account-info-block">
+                        <p class="legend legend-center text-uppercase text-primary"><strong><span class="legend-text">Full Name</span></strong></p>
+                        <p class="text-capitalize h3"><i>Fredius Tout Court</i></p>
                     </div>
-                    <div class="account-info-block text-left">
-                        <p class="legend legend-left text-uppercase text-primary"><strong><span class="legend-text">Email address</span></strong></p>
-                        <p class="text-capitalize text-right"><i>Frediustc@gmail.com</i></p>
+                    <div class="account-info-block">
+                        <p class="legend legend-center text-uppercase text-primary"><strong><span class="legend-text">Email address</span></strong></p>
+                        <p class="text-capitalize h3"><i>Frediustc@gmail.com</i></p>
                     </div>
-                    <div class="account-info-block text-left">
-                        <p class="legend legend-right text-uppercase text-primary"><strong><span class="legend-text">gender</span></strong></p>
-                        <p class="text-capitalize"><i>Male</i></p>
+                    <div class="account-info-block">
+                        <p class="legend legend-center text-uppercase text-primary"><strong><span class="legend-text">gender</span></strong></p>
+                        <p class="text-capitalize h3"><i>Male</i></p>
                     </div>
-                    <div class="account-info-block text-left">
-                        <p class="legend legend-right text-uppercase text-primary"><strong><span class="legend-text">Password</span></strong></p>
-                        <p class="text-capitalize text-right"><i>Selected Password</i></p>
+                    <div class="account-info-block">
+                        <p class="legend legend-center text-uppercase text-primary"><strong><span class="legend-text">Password</span></strong></p>
+                        <p class="text-capitalize h3"><i>Selected Password</i></p>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ include($rep . "php/include/menu.php");
                 <div class="col-xs-12">
                     <div class="row">
                         <div class="col-xs-8 col-xs-push-2">
-                            <h1 class="text-capitalize">Update profile</h1>
+                            <h1 class="text-capitalize text-center">Update profile</h1>
                             <form class="form-vertical update-profile">
                                 <div class="form-group">
                                     <label for="color-pick" class="text-capitalize">Pick a Color for Profile Picture's background <i class="small">(optionnal)</i></label>
