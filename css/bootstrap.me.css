@@ -241,25 +241,25 @@ ul.list-continous li:last-child::after
     color: #8257B5;
 }
 /*background color*/
+.bg-primary
+{
+    background-color: #0699CE;
+}
 .bg-warning
 {
-    color: #FF5555;
+    background-color: #FF5555;
 }
 .bg-danger
 {
-    color: #FF2A55;
-}
-.bg-success
-{
-    color: #05AF76;
-}
-.bg-primary
-{
-    color: #0699CE;
+    background-color: #FF2A55;
 }
 .bg-alt
 {
-    color: #8257B5;
+    background-color: #8257B5;
+}
+.bg-success
+{
+    background-color: #05AF76;
 }
 /*button to do */
 /*nb btn 3d has not been set idea is to take a black pseudo element with low opacity*/

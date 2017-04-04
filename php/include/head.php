@@ -9,7 +9,7 @@
     <title><?php echo $page; ?></title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo $rep; ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/bootstrap.me.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/font/myIcon/style.css" rel="stylesheet" />
     <link href="http://calendar/style.css" rel="stylesheet" />
