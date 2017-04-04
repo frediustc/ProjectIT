@@ -43,9 +43,9 @@ jQuery(document).ready(function(){
     })();
     //set the date and time at the top of the page
     $('.todayDateTop').empty().append(getActualDateTime.day + ', ' + getActualDateTime.date + ' ' + getActualDateTime.month + ' ' + getActualDateTime.year);
-    setInterval(function(){
+    function haveTime()
+    {
         var d = new Date();
-        //hours - minutes - seconds
         var _min = (d.getMinutes() > 9) ? d.getMinutes() : 0 + '' + d.getMinutes();
         var _sec = (d.getSeconds() > 9) ? d.getSeconds() : 0 + '' + d.getSeconds();
         var _ghr = d.getHours();
@@ -53,7 +53,9 @@ jQuery(document).ready(function(){
         _hr =  (_hr > 9) ? _hr : 0 + '' + _hr;
         _ts = (_ghr > 12) ? 'PM' : 'AM';
         $('.actualTimeTop').empty().append(_hr + ':' + _min +  ':' + _sec + '' + _ts);
-    }, 1000);
+    }
+    haveTime();
+    setInterval(haveTime, 1000);
 
 
 });
