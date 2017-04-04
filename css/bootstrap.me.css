@@ -327,3 +327,7 @@ ul.list-continous li:last-child::after
     -webkit-border-radius: 50%;
     border-radius: 50%;
 }
+.small
+{
+    font-size: 0.8em;
+}

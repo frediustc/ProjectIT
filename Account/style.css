@@ -26,3 +26,15 @@
     height: 1px;
     opacity: 0.2;
 }
+.update-profile
+{
+    margin: 40px 0;
+}
+.update-profile label
+{
+    margin-bottom: 20px;
+}
+.update-profile .btn
+{
+    margin-top: 20px;
+}
