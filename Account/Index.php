@@ -5,10 +5,24 @@ include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 ?>
 <div class="row">
-    <div class="col-sm-2">
-        <div class="box box-left box-primary">
-            <p><strong>Total Reports</strong></p>
-            <h1>1200</h1>
+    <div class="col-sm-3">
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h1 class="pp-account text-primary">FT</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="box">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="text-center">
+                        <h1 class="pp-account primary">FT</h1>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -240,7 +240,27 @@ ul.list-continous li:last-child::after
 {
     color: #8257B5;
 }
-
+/*background color*/
+.bg-warning
+{
+    color: #FF5555;
+}
+.bg-danger
+{
+    color: #FF2A55;
+}
+.bg-success
+{
+    color: #05AF76;
+}
+.bg-primary
+{
+    color: #0699CE;
+}
+.bg-alt
+{
+    color: #8257B5;
+}
 /*button to do */
 /*nb btn 3d has not been set idea is to take a black pseudo element with low opacity*/
 .btn-3d
