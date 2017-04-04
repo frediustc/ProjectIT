@@ -1,1 +1,6 @@
-<?php header('location: Dashboard/'); ?>
+<?php
+    
+ header('location: Dashboard/');
+
+
+?>
