@@ -79,7 +79,7 @@
                 <h1><?php echo $page; ?></h1>
             </div>
             <div class="col-xs-6 text-right text-capitalyze text-block-middle">
-                <p>Today's Date: <span class="todayDateTop">15 March 2017</span></p>
+                <p>Today's Date: <span class="todayDateTop">...</span></p>
                 <p>Actual Time: <span class="actualTimeTop">06:56:00 PM</span></p>
             </div>
         </div>
