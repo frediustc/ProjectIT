@@ -7,14 +7,11 @@ jQuery(document).ready(function(){
     //tooltips initialization
     $('[data-toggle="tooltip"]').tooltip();
 
-    //var to get date and time in letters
-
-        //date - days - months - years
-
-
-    var getActualDateTime = (function()
+    //get date and time
+    var getActualDateTime = function()
     {
         var d = new Date();
+        //date - day - month - year
         var _d = d.getDay();
         var _days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var _D = d.getDate();
@@ -34,28 +31,30 @@ jQuery(document).ready(function(){
             default:
                 _D += '<sup>Th</sup>';
         }
-        return {
-            day: _days[_d],
-            date: _D,
-            month: _month[_m],
-            year: _year
-        };
-    })();
-    //set the date and time at the top of the page
-    $('.todayDateTop').empty().append(getActualDateTime.day + ', ' + getActualDateTime.date + ' ' + getActualDateTime.month + ' ' + getActualDateTime.year);
-    function haveTime()
-    {
-        var d = new Date();
+        //hours - minutes - seconds
         var _min = (d.getMinutes() > 9) ? d.getMinutes() : 0 + '' + d.getMinutes();
         var _sec = (d.getSeconds() > 9) ? d.getSeconds() : 0 + '' + d.getSeconds();
         var _ghr = d.getHours();
         var _hr = (_ghr > 12) ? (_ghr - 12) : _ghr;
         _hr =  (_hr > 9) ? _hr : 0 + '' + _hr;
         _ts = (_ghr > 12) ? 'PM' : 'AM';
-        $('.actualTimeTop').empty().append(_hr + ':' + _min +  ':' + _sec + '' + _ts);
+        return {
+            day: _days[_d],
+            date: _D,
+            month: _month[_m],
+            year: _year,
+            min: _min,
+            sec: _sec,
+            hr: _hr,
+            timeState: _ts
+        };
+    };
+    //set the date and time at the top of the page
+    $('.todayDateTop').empty().append(getActualDateTime().day + ', ' + getActualDateTime().date + ' ' + getActualDateTime().month + ' ' + getActualDateTime().year);
+    function haveTime()
+    {
+        $('.actualTimeTop').empty().append(getActualDateTime().hr + ':' + getActualDateTime().min +  ':' + getActualDateTime().sec + '' + getActualDateTime().timeState);
     }
     haveTime();
     setInterval(haveTime, 1000);
-
-
 });
