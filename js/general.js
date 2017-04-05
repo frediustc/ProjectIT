@@ -53,7 +53,7 @@ jQuery(document).ready(function(){
     $('.todayDateTop').empty().append(getActualDateTime().day + ', ' + getActualDateTime().date + ' ' + getActualDateTime().month + ' ' + getActualDateTime().year);
     function haveTime()
     {
-        $('.actualTimeTop').empty().append(getActualDateTime().hr + ':' + getActualDateTime().min +  ':' + getActualDateTime().sec + '' + getActualDateTime().timeState);
+        $('.actualTimeTop').empty().append(getActualDateTime().hr + ':' + getActualDateTime().min +  ':' + getActualDateTime().sec + ' ' + getActualDateTime().timeState);
     }
     haveTime();
     setInterval(haveTime, 1000);
