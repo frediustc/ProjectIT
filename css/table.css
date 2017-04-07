@@ -33,14 +33,14 @@
     font-size: 3em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.table.table-hover tbody tr td
+.table.table-hover tbody tr td, .table.table-hover tbody tr td a
 {
     padding:15px 5px;
     color:#999;
 }
 .table.table-hover tr td a:hover, .table.table-hover tr th a:hover
 {
-    color:black;
+    color:#999;
 }
 .pp-account-small
 {

@@ -33,22 +33,24 @@ include($rep . "php/include/menu.php");
 <div class="row">
     <div class="col-xs-10 col-xs-push-1">
         <div class="action-table box">
-            <h1 class="table-title bg-danger text-capitalize text-center box">Received Reports</h1>
+            <h1 class="table-title bg-warning text-capitalize text-center box">Received Reports</h1>
             <table class="data-table table table-hover">
                 <thead>
-                    <tr class="text-danger">
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-name asc">Customer <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-contact asc">Contact <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-post-date asc">Posted date <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-last-activity asc">Last Activity <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-location asc">Location <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize sort sort-order-by-files asc">files <span class="glyphicon glyphicon-menu-down"></span></a></th>
-                        <th class="text-center"><a href="#" class="text-danger text-capitalize">options</a></th>
+                    <tr class="text-warning">
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-name asc">ID</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-name asc">Customer</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-contact asc">Contact</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-post-date asc">Posted date</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-last-activity asc">Last Activity</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-location asc">Location</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize sort sort-order-by-files asc">files</a></th>
+                        <th class="text-center"><a href="#" class="text-warning text-capitalize">options</a></th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
                     <tr>
-                        <td class="text-capitalize text-center"><a href="#" class="text-danger"><span class="pp-account-small bg-alt box-circle">FT</span>Fredius Tout Court</a></td>
+                        <td class="text-capitalize text-center">#35</td>
+                        <td class="text-capitalize text-center"><a href="#">Fredius Tout Court</a></td>
                         <td class="text-center"><i>frediustc@gmail.com</i></td>
                         <td class="text-center">27<sup>th</sup> March 2017</td>
                         <td class="text-center">1 Week ago</td>
@@ -56,46 +58,6 @@ include($rep . "php/include/menu.php");
                         <td class="text-center">1</td>
                         <td>
                             <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
-                            <button class="btn bg-danger glyphicon glyphicon-trash"></button>
-                        </td>
-                    </tr>
-                    <tr class="read">
-                        <td class="text-capitalize text-center"><a href="#" class="text-danger"><span class="pp-account-small bg-alt box-circle">FT</span>Fredius Tout Court</a></td>
-                        <td class="text-center"><i>frediustc@gmail.com</i></td>
-                        <td class="text-center">27<sup>th</sup> March 2017</td>
-                        <td class="text-center">1 Week ago</td>
-                        <td class="text-center">Lapaz</td>
-                        <td class="text-center">1</td>
-                        <td>
-                            <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
-                            <button class="btn bg-danger glyphicon glyphicon-trash"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize text-center"><a href="#" class="text-danger"><span class="pp-account-small bg-alt box-circle">FT</span>Fredius Tout Court</a></td>
-                        <td class="text-center"><i>frediustc@gmail.com</i></td>
-                        <td class="text-center">27<sup>th</sup> March 2017</td>
-                        <td class="text-center">1 Week ago</td>
-                        <td class="text-center">Lapaz</td>
-                        <td class="text-center">1</td>
-                        <td>
-                            <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
-                            <button class="btn bg-danger glyphicon glyphicon-trash"></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-capitalize text-center"><a href="#" class="text-danger"><span class="pp-account-small bg-alt box-circle">FT</span>Fredius Tout Court</a></td>
-                        <td class="text-center"><i>frediustc@gmail.com</i></td>
-                        <td class="text-center">27<sup>th</sup> March 2017</td>
-                        <td class="text-center">1 Week ago</td>
-                        <td class="text-center">Lapaz</td>
-                        <td class="text-center">1</td>
-                        <td>
-                            <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
                             <button class="btn bg-danger glyphicon glyphicon-trash"></button>
                         </td>
                     </tr>
