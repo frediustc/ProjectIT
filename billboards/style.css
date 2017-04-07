@@ -1,8 +1,9 @@
-.action-billboard-table
+.addbill
 {
-
+    padding: 10px 40px;
 }
-.table-title
+.addbill .btn.btn-success:hover
 {
-    
+    color: black;
+    background-color:#05AF76;
 }
