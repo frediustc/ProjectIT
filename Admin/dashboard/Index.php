@@ -1,8 +1,8 @@
 <?php
 $page = "Admin Dashboard";
 $rep = "../";
-include($rep . "php/include/head.php");
-include($rep . "php/include/menu.php");
+include($rep . "../php/include/head.php");
+include($rep . "../php/include/menu.php");
 ?>
 <div class="row text-center">
     <div class="col-sm-4">
@@ -60,7 +60,32 @@ include($rep . "php/include/menu.php");
 
         <!--orders and reports-->
         <div class="row">
-            <?php include($rep . 'php/include/AdminDashboard/reports.php'); ?>
+            <div class="col-xs-8">
+                <h3>Lastest Reports</h3>
+                <div class="box box-top  box-danger">
+                    <table class="lastest-reports table">
+                        <thead class="text-uppercase">
+                            <tr>
+                                <th>Customers</th>
+                                <th>Reports</th>
+                                <th>Reports Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-capitalize text-center"><a href="#"><span class="pp-account-small bg-success box-circle text-center">FTC</span><br />Fredius Tout...</a></td>
+                                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
+                                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                            </tr>
+                            <tr>
+                                <td class="text-capitalize text-center"><a href="#"><span class="pp-account-small bg-success box-circle text-center">FTC</span><br />Fredius Tout...</a></td>
+                                <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
+                                <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="col-xs-4">
                 <h3 class="text-right text-capitalize">14 New Registrations</h3>
                 <div class="box box-top new-user-registed box-alt">
@@ -157,4 +182,4 @@ include($rep . "php/include/menu.php");
         </ul>
     </div>
 </div>
-<?php include($rep . "php/include/footer.php");?>
+<?php include($rep . "../php/include/footer.php");?>
