@@ -70,6 +70,14 @@
                 </span>
             </a>
         </li>
+        <li>
+            <a href="<?php echo $rep; ?>Rents/" class="<?php echo ($page === 'Admin Rents') ? 'actived' : null;?>">
+                <span class="text-block-middle">
+                    <span class="ddfj-ordericon"></span>
+                    <span class="text-icon">Rents</span>
+                </span>
+            </a>
+        </li>
     </ul>
 </aside>
 <div class="main-container">

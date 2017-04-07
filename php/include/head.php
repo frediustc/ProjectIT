@@ -14,7 +14,7 @@
     <link href="<?php echo $rep; ?>css/font/myIcon/style.css" rel="stylesheet" />
     <link href="http://calendar/style.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/admin.css" rel="stylesheet" />
-    <?php ($page === 'Admin Billboards' || $page === 'Admin Reports' || $page === 'Admin Orders') ? print '<link href="'. $rep .'css/table.css" rel="stylesheet" />' : null; ?>
+    <?php ($page === 'Admin Billboards' || $page === 'Admin Rents' || $page === 'Admin Reports' || $page === 'Admin Orders') ? print '<link href="'. $rep .'css/table.css" rel="stylesheet" />' : null; ?>
     <link href="style.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
