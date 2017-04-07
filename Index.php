@@ -1,6 +1,6 @@
 <?php
 $rep = "./";
-$page = "Administrator logIn";
+$page = "Setup page";
 include './php/include/head.php';
 ?>
     <div class="container">
@@ -23,7 +23,7 @@ include './php/include/head.php';
                         </div>
                         <div class="form-group">
                             <label for="setup-pwd">Password</label>
-                            <input type="text" name="setup-pwd" required="" id="setup-pwd" class="form-control" />
+                            <input type="text" name="setup-pwd" id="setup-pwd" class="form-control" />
                         </div>
                         <div class="form-group text-center">
                             <input type="submit" name="setup-page" value="Setup Page" class="btn-lg btn btn-primary btn-3d"/>
@@ -33,6 +33,7 @@ include './php/include/head.php';
             </div>
         </div>
     </div>
+    <script src="js/jsScan/setup.js"></script>
 <?php include './php/include/footer.php';
 // header('location: Dashboard/');
 ?>

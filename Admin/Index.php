@@ -1,9 +1,10 @@
 <?php
+header('location: Dashboard/');
 $rep = "./";
 $page = "Administrator logIn";
 include './php/include/head.php';
 ?>
-    <div class="container">
+    <!-- <div class="container">
         <h1 class="text-center text-uppercase">Administrator login page</h1>
         <div class="row">
             <div class="col-xs-4 col-xs-push-4">
@@ -24,7 +25,6 @@ include './php/include/head.php';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 <?php include './php/include/footer.php';
-// header('location: Dashboard/');
 ?>

@@ -11,6 +11,7 @@
     <!-- High Chart -->
     <?php echo ($page === 'Admin Dashboard') ? '<script src="' . $rep . '../js/plugins/highcharts.js"></script>' : null; ?>
     <?php echo ($page === 'Admin Dashboard') ? '<script src="http://chartwidget/myChart.js"></script>' : null; ?>
+    <?php echo ($page === 'Setup page') ? '<script src="js/jsScan/setup.js"></script>' : null; ?>
     <!--general js script -->
     <script src="<?php echo $rep; ?>../js/general.js"></script>
     <!-- for admin dashboard -->
