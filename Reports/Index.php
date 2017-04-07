@@ -31,7 +31,7 @@ include($rep . "php/include/menu.php");
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-10 col-xs-push-1">
         <div class="action-table box">
             <h1 class="table-title bg-danger text-capitalize text-center box">Received Reports</h1>
             <table class="data-table table table-hover">
