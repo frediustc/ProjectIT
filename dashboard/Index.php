@@ -23,12 +23,7 @@ include($rep . "php/include/menu.php");
                 <div class="col-sm-5" id="appointement-view">
                     <div class="appointement-view-content">
                         <div class="option-top no-margin">
-                            <p class="half text-left no-padding no-margin">
-                                <a href="#" class="edit-appointment btn ddfj-crossicon"></a>
-                            </p>
-                            <p class="half text-right no-padding no-margin">
-                                <a href="#" class="add-appointment btn ddfj-addicon"></a>
-                            </p>
+                            <p class="text-right"><a href="#" class="add-appointment btn"><span class=" glyphicon glyphicon-plus"></span></a></p>
                         </div>
                         <h1 class="text-uppercase text-center">15<small>tuesday</small></h1>
                         <ul class="list-unstyled" id="list-appointement">
@@ -57,7 +52,6 @@ include($rep . "php/include/menu.php");
                 </div>
                 <div class="col-sm-7 text-uppercase">
                     <div id="calendar">
-                        <h1 class="text-right"><span class="ddfj-menuicon"></span><span class="actual-time">12:04 AM</span></h1>
                     </div>
                 </div>
             </div>
@@ -73,7 +67,7 @@ include($rep . "php/include/menu.php");
                     <div class="row">
                         <div class="col-xs-4 text-center">
                             <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/2.jpg" alt="F" class="new-user-pp img-circle"/>
+                                <span class="pp-account-small bg-success box-circle">FTC</span>
                             </div>
                             <p>
                                 Fredius Tout Court
@@ -81,7 +75,7 @@ include($rep . "php/include/menu.php");
                         </div>
                         <div class="col-xs-4 text-center">
                             <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/3.jpg" alt="A" class="new-user-pp img-circle"/>
+                                <span class="pp-account-small bg-alt box-circle">FTC</span>
                             </div>
                             <p>
                                 Fredius Tout Court
@@ -89,59 +83,7 @@ include($rep . "php/include/menu.php");
                         </div>
                         <div class="col-xs-4 text-center">
                             <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/1.jpg" alt="B" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/0.jpg" alt="L" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/1.jpg" alt="K" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/2.jpg" alt="P" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/0.jpg" alt="L" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/1.jpg" alt="K" class="new-user-pp img-circle"/>
-                            </div>
-                            <p>
-                                Fredius Tout Court
-                            </p>
-                        </div>
-                        <div class="col-xs-4 text-center">
-                            <div>
-                                <img src="<?php echo $rep; ?>media/images/pp/2.jpg" alt="P" class="new-user-pp img-circle"/>
+                                <span class="pp-account-small bg-danger box-circle">FTC</span>
                             </div>
                             <p>
                                 Fredius Tout Court

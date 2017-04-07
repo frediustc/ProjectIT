@@ -12,28 +12,13 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="<?php echo $rep; ?>media/images/pp/1.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
+                    <td class="text-capitalize text-center"><a href="#"><span class="pp-account-small bg-success box-circle text-center">FTC</span><br />Fredius Tout...</a></td>
                     <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
                     <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
                 </tr>
                 <tr>
-                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="<?php echo $rep; ?>media/images/pp/2.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-                </tr>
-                <tr>
-                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="<?php echo $rep; ?>media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-                </tr>
-                <tr>
-                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="<?php echo $rep; ?>media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
-                    <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
-                </tr>
-                <tr>
-                    <td class="text-capitalize"><a href="#"><span class="img-sizing"><img src="<?php echo $rep; ?>media/images/pp/3.jpg" class="img-responsive img-circle"alt="pp cust"/></span>Fredius Tout...</a></td>
-                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ syugji daiudgb</a></td>
+                    <td class="text-capitalize text-center"><a href="#"><span class="pp-account-small bg-success box-circle text-center">FTC</span><br />Fredius Tout...</a></td>
+                    <td><a href="#">Fredius Tout Court wutewu wieuwe wiyw dwiyd wiydgwd iiwygd wdygwd wuhdgkj\ </a></td>
                     <td class="text-capitalize">21<sup>St</sup> Juin 2016</td>
                 </tr>
             </tbody>

@@ -152,3 +152,13 @@ h1
     padding-top: 0px;
     width: 100%;
 }
+
+/*pp*/
+.pp-account-small
+{
+    width:40px;
+    line-height: 40px;
+    display: inline-block;
+    color:white;
+    margin:10px;
+}

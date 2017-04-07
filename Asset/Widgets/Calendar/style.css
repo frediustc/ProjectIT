@@ -104,11 +104,10 @@
 }
 #appointement-view a.btn
 {
-    padding:5px;
-    margin:15px;
-    border-radius:50%;
-    border:1px solid white;
+    font-size: 1.5em;
     color:white;
+    border: none;
+    margin: 5px;
 }
 #appointement-view a.btn:hover
 {
