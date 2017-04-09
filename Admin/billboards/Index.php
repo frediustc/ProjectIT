@@ -3,6 +3,8 @@ $page = "Admin Billboards";
 $rep = "../../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
+
+$selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIMIT 20');
 ?>
 
 <div class="row">
@@ -31,49 +33,56 @@ include($rep . "php/include/menu.php");
         <div class="action-table box">
             <h1 class="table-title bg-primary text-capitalize box text-center">Posted Billboards</h1>
             <p class="text-right addbill"><a href="./addbillboard.php" class="btn-3d btn-lg btn btn-success bg-success">Add Billboards</a></p>
-            <table class="data-table table table-hover">
-                <thead>
-                    <tr class="text-primary">
-                        <th class="text-center text-capitalize">ID</th>
-                        <th class="text-center text-capitalize">Location</th>
-                        <th class="text-center text-capitalize">Posted date</th>
-                        <th class="text-center text-capitalize">Files</th>
-                        <th class="text-center text-capitalize">Mapped</th>
-                        <th class="text-center text-capitalize">Status</th>
-                        <th class="text-center text-capitalize">option<s/th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
+            <?php
+            // while ($eachBill = $selbill->fetch()) {
+            //     if (!empty($eachBill)) {
+            //     }
+            //     else
+            //     {
+            //
+            //     }
+            // }
+            if (!empty($selbill)) { ?>
+                <table class="data-table table table-hover">
+                    <thead>
+                        <tr class="text-primary">
+                            <th class="text-center text-capitalize">ID</th>
+                            <th class="text-center text-capitalize">Location</th>
+                            <th class="text-center text-capitalize">Posted date</th>
+                            <th class="text-center text-capitalize">Files</th>
+                            <th class="text-center text-capitalize">Mapped</th>
+                            <th class="text-center text-capitalize">Status</th>
+                            <th class="text-center text-capitalize">option<s/th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                <?php
+                while ($eachbill = $selbill->fetch()) { ?>
                     <tr>
-                        <td class="text-danger">1</td>
-                        <td>Labone</td>
-                        <td>1<sup>St</sup> March 2017</td>
+                        <td class="text-danger">#<?php echo $eachbill['billboard_id']; ?></td>
+                        <td><?php echo $eachbill['billboard_location']; ?></td>
+                        <td><?php echo $eachbill['billboard_post_date']; ?></td>
                         <td>2</td>
-                        <td>yes</td>
-                        <td>Rented</td>
+                        <td><?php echo ($eachbill['billboard_map_lat'] > 0 && $eachbill['billboard_map_lon'] > 0 && $eachbill['billboard_map_zoom'] > 0) ? 'yes' : 'no'; ?></td>
+                        <td><?php echo $eachbill['billboard_availability']; ?></td>
                         <td>
                             <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
                             <button class="btn bg-primary glyphicon glyphicon-edit"></button>
                             <button class="btn bg-danger glyphicon glyphicon-trash"></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-alt">1</td>
-                        <td>Labone</td>
-                        <td>1<sup>St</sup> March 2017</td>
-                        <td>2</td>
-                        <td>yes</td>
-                        <td>Rented</td>
-                        <td>
-                            <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
-                            <button class="btn bg-danger glyphicon glyphicon-trash"></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <?php } ?>
+                    </tbody>
+                </table>
+                <?php
+            }
+            else
+            {
+
+            }
+            ?>
         </div>
     </div>
     <?php include($rep . "php/include/admin/notif.php");?>
 </div>
-<?php include($rep . "php/include/footer.php");?>
+<?php include($rep . "php/include/footer.php"); ?>
