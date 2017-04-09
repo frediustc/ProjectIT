@@ -29,8 +29,8 @@
     var ord_list = [10, 50, 30, 60, 50, 20];
     createChart('#visitors', vis_list, 'Uniques Visitors', '#4CB8FF');
     createChart('#orders', ord_list, 'Orders', '#FE7167');
-    createChart('#reports', rep_list, 'Reports', '#00C484'); " : null; ?>
-    </script>
+    createChart('#reports', rep_list, 'Reports', '#00C484'); </script>" : null; ?>
+
     <script>
         jQuery(document).ready(function() {
             function switchCheck(_clicked, _affected)

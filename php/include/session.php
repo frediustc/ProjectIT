@@ -17,6 +17,6 @@ else
 {
     if($page !== 'Setup page' && $page !== 'Administrator logIn')
     {
-        header('location:' . $rep);
+        header('location:' . $rep . 'Admin/');
     }
 }

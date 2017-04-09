@@ -30,7 +30,7 @@ include($rep . "php/include/menu.php");
     <div class="col-xs-9">
         <div class="action-table box">
             <h1 class="table-title bg-primary text-capitalize box text-center">Posted Billboards</h1>
-            <p class="text-right addbill"><a href="#" class="btn-3d btn-lg btn btn-success bg-success">Add Billboards</a></p>
+            <p class="text-right addbill"><a href="./addbillboard.php" class="btn-3d btn-lg btn btn-success bg-success">Add Billboards</a></p>
             <table class="data-table table table-hover">
                 <thead>
                     <tr class="text-primary">
