@@ -1,8 +1,8 @@
 <?php
 $page = "Admin Reports";
-$rep = "../";
-include($rep . "../php/include/head.php");
-include($rep . "../php/include/menu.php");
+$rep = "../../";
+include($rep . "php/include/head.php");
+include($rep . "php/include/menu.php");
 ?>
 <div class="row">
     <div class="col-sm-3">
@@ -66,4 +66,4 @@ include($rep . "../php/include/menu.php");
         </div>
     </div>
 </div>
-<?php include($rep . "../php/include/footer.php");?>
+<?php include($rep . "php/include/footer.php");?>

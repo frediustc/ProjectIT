@@ -2,11 +2,16 @@
 session_start();
 if(isset($_SESSION['user_id']))
 {
-    if($page === 'Setup page' || $page === 'Administrator logIn')
+    switch($page)
     {
-        header('location:' . $rep);
+        case 'Setup page' :
+            header('location: ' . $rep . 'Admin/');
+            break;
+        case 'Administrator logIn' :
+            header('location: Dashboard/');
+            break;
     }
-    require $rep . '/php/include/user.php';
+    require $rep . 'php/include/user.php';
 }
 else
 {

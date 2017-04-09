@@ -9,7 +9,7 @@ include $rep .'php/include/head.php';
             <div class="col-xs-4 col-xs-push-4">
                 <div class="">
                     <form class="adminForm form-vertical box box-top box-primary" method="post" action="./">
-                        <?php include('php/script/Setup.php'); ?>
+                        <?php include($rep .'php/script/Setup.php'); ?>
                         <div class="form-group">
                             <label for="setup-server">Server Name</label>
                             <input type="text" name="setup-server" required="" id="setup-server" class="form-control" />

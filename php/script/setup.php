@@ -151,7 +151,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         echo '
             <p class="alert bg-success"><span class="glyphicon glyphicon-warning-sign"></span>Database created successfully !!!</p>
             <p class="alert bg-primary"><span class="glyphicon glyphicon-warning-sign"></span>Username: <i>admin@admin.com</i> , Password: <i>admin</i></p>
-            <p class="alert bg-primary text-right"><span class="alert-left">Go to the logIn page?</span> <a href="Admin/" class="btn btn-success">yes</a></p>
+            <p class="alert bg-primary text-right"><span class="alert-left">Go to the logIn page?</span> <a href="' . $rep .'Admin/" class="btn btn-success">yes</a></p>
             ';
     }
     catch(PDOException $e)

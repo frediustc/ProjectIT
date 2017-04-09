@@ -1,3 +1,3 @@
 <?php
-header('location: ./setup/');
+header('location: setup/');
 ?>
