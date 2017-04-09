@@ -5,7 +5,7 @@ unique_visitors --see website visiters number
 connected_users --connected users
 billboards --information about billboard posted
 //employees --store employees graphic designer etc
-orders --see orders 
+orders --see orders
 rents --See sales (after ordering)
 users_reports --store customers reports
 messages --store instant messages data
@@ -23,6 +23,11 @@ CREATE TABLE IF NOT EXISTS user_type(
 	user_type_name varchar(26) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS user_pp_text(
+	user_pp_text_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	user_pp_text_name varchar(3) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS users(
 	user_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	user_full_name VARCHAR(70) NOT NULL,
@@ -30,9 +35,12 @@ CREATE TABLE IF NOT EXISTS users(
 	user_password VARCHAR(100) NOT NULL,
 	user_registration_date DATETIME NOT NULL,
 	user_email_code VARCHAR(50) NOT NULL,
-	user_account_status enum('disactived', 'actived', 'banned') NOT NULL,
+	user_account_status enum("disactived", "actived", "banned") NOT NULL,
+	user_account_pp_bg enum("bg-primary", "actived", "banned") NOT NULL,
 	user_user_type_id INT(1) NOT NULL,
-	FOREIGN KEY(user_user_type_id) REFERENCES user_type(user_type_id)
+	user_pp_text_id INT(11) UNSIGNED,
+	FOREIGN KEY(user_user_type_id) REFERENCES user_type(user_type_id),
+	FOREIGN KEY(user_pp_text_id) REFERENCES user_pp_text(user_pp_text_id)
 );
 
 CREATE TABLE IF NOT EXISTS unique_visitors(
@@ -103,18 +111,18 @@ CREATE TABLE IF NOT EXISTS messages_text(
 	FOREIGN KEY(message_text_receiver) REFERENCES users(user_id)
 );
 
-CREATE TABLE IF NOT EXISTS messages_files(
-	message_file_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	message_file_name VARCHAR(60) NOT NULL,
-	message_file_extension VARCHAR(5) NOT NULL,
-	message_file_sent_date DATETIME NOT NULL,
-	message_file_received_date DATETIME NOT NULL,
-	message_file_size VARCHAR(5) NOT NULL,
-	message_file_status ENUM('Sent', 'Seen'),
-	message_file_sender INT(11) UNSIGNED NOT NULL,
-	message_file_receiver INT(11) UNSIGNED NOT NULL,
-	FOREIGN KEY(message_file_sender) REFERENCES users(user_id),
-	FOREIGN KEY(message_file_receiver) REFERENCES users(user_id)
+CREATE TABLE IF NOT EXISTS reports_files(
+	reports_file_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	reports_file_name VARCHAR(60) NOT NULL,
+	reports_file_extension VARCHAR(5) NOT NULL,
+	reports_file_sent_date DATETIME NOT NULL,
+	reports_file_received_date DATETIME NOT NULL,
+	reports_file_size VARCHAR(5) NOT NULL,
+	reports_file_status ENUM('Sent', 'Seen'),
+	reports_file_sender INT(11) UNSIGNED NOT NULL,
+	user_report_rent_order_id VARCHAR(15) NOT NULL,
+	FOREIGN KEY(user_report_rent_order_id) REFERENCES rents(rent_order_id),
+	FOREIGN KEY(reports_file_sender) REFERENCES users(user_id)
 );
 /*
 CREATE TABLE IF NOT EXISTS employees(
