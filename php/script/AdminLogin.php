@@ -20,7 +20,7 @@ if(isset($_POST['admin-email']) && !empty($_POST['admin-email']) && isset($_POST
         $user = $users->fetch();
         if(!empty($user))
         {
-            if($user['user_user_type_id'] == 1 && $user['user_account_status '] == 'actived')
+            if($user['user_user_type_id'] == 1 && $user['user_account_status'] == 'actived')
             {
                 $_SESSION['user_id'] = $user['user_id'];
                 header('location: ./dashboard/');
