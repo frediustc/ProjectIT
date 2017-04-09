@@ -1,6 +1,6 @@
 <?php
-require 'connect.php';
-require 'session.php';
+include $rep . 'php/include/connect.php';
+include  $rep . 'php/include/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

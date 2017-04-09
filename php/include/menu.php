@@ -4,25 +4,25 @@
     </div>
     <ul class="nav navbar-nav navbar-right text-capitalize">
         <li>
-            <a href="#" class="icon-display" data-toggle="tooltip" title="Add Billboard" data-placement="bottom">
+            <a href="#" class="icon-display" title="Add Billboard">
                 <button class="btn ddfj-addicon"></button>
             </a>
         </li>
         <li>
-            <a href="#" class="icon-display" data-toggle="tooltip" title="Messages" data-placement="bottom">
+            <a href="#" class="icon-display" title="Messages">
                 <button class="btn ddfj-msgicon"></button>
             </a>
         </li>
         <li>
-            <a href="#" class="icon-display" data-toggle="tooltip" title="Notifications" data-placement="bottom">
+            <a href="#" class="icon-display" title="Notifications">
                 <button class="btn ddfj-bellicon"></button>
             </a>
         </li>
         <li>
-            <a href="#" data-toggle="tooltip" title="Your Name" data-placement="bottom">Diomande Dro Freddy Junior</a>
+            <a href="#" title="Your Name"><?php echo $u_fn; ?></a>
         </li>
         <li>
-            <a href="#" class="icon-display" data-toggle="tooltip" title="Account" data-placement="bottom">
+            <a href="#" class="icon-display" title="Account">
                 <button class="btn ddfj-usericon"></button>
             </a>
         </li>
