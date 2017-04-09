@@ -13,10 +13,10 @@ messages --store instant messages data
 //forms --Admin can create forms
 
 */
+GRANT ALL PRIVILEGES ON selected_name.* TO 'username'@'servername' IDENTIFIED BY 'password';
 
-CREATE DATABASE IF NOT EXISTS selected_name CHARACTER SET 'uft8';
+CREATE DATABASE IF NOT EXISTS selected_name;
 USE selected_name;
-GRANT ALL PRIVILEGES ON selected_name2.* TO 'username'@'servername' IDENTIFIED BY 'password';
 
 CREATE TABLE IF NOT EXISTS user_type(
 	user_type_id INT(1) PRIMARY KEY AUTO_INCREMENT,
@@ -124,6 +124,11 @@ CREATE TABLE IF NOT EXISTS reports_files(
 	FOREIGN KEY(user_report_rent_order_id) REFERENCES rents(rent_order_id),
 	FOREIGN KEY(reports_file_sender) REFERENCES users(user_id)
 );
+
+INSERT INTO user_type (user_type_name) VALUES ("Administrator"), ("Customer"), ("Employee");
+INSERT INTO user_pp_text (user_pp_text_name) VALUES ("AD");
+INSERT INTO users (user_full_name, user_email, user_password, user_registration_date, user_email_code, user_account_status, user_account_pp_bg, user_user_type_id, user_pp_text_id)
+VALUES ("Administrator", "admin@admin.com", sha1("admin"), NOW(), "admin", "actived", "bg-primary", 1, 1);
 /*
 CREATE TABLE IF NOT EXISTS employees(
 	employee_id INT(3) UNSIGNED PRIMARY KEY AUTO_INCREMENT,

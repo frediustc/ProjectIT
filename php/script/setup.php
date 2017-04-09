@@ -7,7 +7,6 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
     $db = trim(htmlspecialchars($_POST['setup-dbname']));
     $psw = trim(htmlspecialchars($_POST['setup-pwd']));
     // $psw = (empty($psw)) ?
-    echo $host . $user . $db . $psw;
     try
 	{
 
@@ -17,21 +16,21 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
 
 		//creating database
 
-		$dbh->exec('CREATE DATABASE IF NOT EXISTS ' . $db . 'CHARACTER SET \'uft8\'') or die(print_r($dbh->errorInfo(), true));
-		$dbh->exec('USE ' . $db) or die(print_r($dbh->errorInfo(), true));
-		$dbh->exec('GRANT ALL PRIVILEGES ON ' . $db . '.* TO ' . $user . '@' . $host . ' IDENTIFIED BY ' . $psw) or die(print_r($dbh->errorInfo(), true));
+		$dbh->exec('CREATE DATABASE IF NOT EXISTS ' . $db);
+		$dbh->exec('USE ' . $db);
+		// $dbh->exec('GRANT ALL PRIVILEGES ON ' . $db . '.* TO ' . $user . '@' . $host . ' IDENTIFIED BY ' . $psw);
 
         //create user type table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS user_type(
         	user_type_id INT(1) PRIMARY KEY AUTO_INCREMENT,
         	user_type_name varchar(26) NOT NULL
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
-        //create user type table
+        //create user pp table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS user_pp_text(
         	user_pp_text_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
         	user_pp_text_name varchar(3) NOT NULL
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create user table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS users(
@@ -47,7 +46,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	user_pp_text_id INT(11) UNSIGNED,
         	FOREIGN KEY(user_user_type_id) REFERENCES user_type(user_type_id),
         	FOREIGN KEY(user_pp_text_id) REFERENCES user_pp_text(user_pp_text_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create unique visitors table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS unique_visitors(
@@ -56,7 +55,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	unique_visitor_visite_date DATE NOT NULL,
         	unique_visitor_views INT DEFAULT 1 NOT NULL,
         	unique_visitor_user_id_if_exists INT(11) UNSIGNED NULL
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create connected visitors table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS connected_users(
@@ -65,7 +64,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	connected_user_time TIMESTAMP NOT NULL,
         	connected_user_user_id INT(11) UNSIGNED NOT NULL,
         	FOREIGN KEY(connected_user_user_id) REFERENCES users(user_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create billboards table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS billboards(
@@ -79,7 +78,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	billboard_map_lat DOUBLE NOT NULL,
         	billboard_map_lon DOUBLE NOT NULL,
         	billboard_map_zoom DOUBLE NOT NULL
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create billboards table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS orders(
@@ -89,9 +88,9 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	order_billboard_id INT(11) UNSIGNED NOT NULL,
         	FOREIGN KEY(order_user_id) REFERENCES users(user_id),
         	FOREIGN KEY(order_billboard_id) REFERENCES billboard(billboard_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
-        //create billboards table
+        //create rents table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS rents(
         	rent_order_id VARCHAR(15) NOT NULL,
         	rent_date TIMESTAMP NOT NULL,
@@ -100,7 +99,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	PRIMARY KEY(rent_order_id, rent_date),
         	FOREIGN KEY(rent_order_id) REFERENCES orders(order_id),
         	FOREIGN KEY(rent_user_id) REFERENCES users(user_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create billboards table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS users_reports(
@@ -109,7 +108,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	user_report_date TIMESTAMP NOT NULL,
         	user_report_rent_order_id VARCHAR(15) NOT NULL,
         	FOREIGN KEY(user_report_rent_order_id) REFERENCES rents(rent_order_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
 
         //create billboards table
 		$dbh->exec('CREATE TABLE IF NOT EXISTS messages_text(
@@ -122,7 +121,38 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	message_text_receiver INT(11) UNSIGNED NOT NULL,
         	FOREIGN KEY(message_text_sender) REFERENCES users(user_id),
         	FOREIGN KEY(message_text_receiver) REFERENCES users(user_id)
-        )') or die(print_r($dbh->errorInfo(), true));
+        )');
+
+        //create reports files table
+		$dbh->exec('CREATE TABLE IF NOT EXISTS reports_files(
+        	reports_file_id INT(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        	reports_file_name VARCHAR(60) NOT NULL,
+        	reports_file_extension VARCHAR(5) NOT NULL,
+        	reports_file_sent_date DATETIME NOT NULL,
+        	reports_file_received_date DATETIME NOT NULL,
+        	reports_file_size VARCHAR(5) NOT NULL,
+        	reports_file_status ENUM("Sent", "Seen"),
+        	reports_file_sender INT(11) UNSIGNED NOT NULL,
+        	user_report_rent_order_id VARCHAR(15) NOT NULL,
+        	FOREIGN KEY(user_report_rent_order_id) REFERENCES rents(rent_order_id),
+        	FOREIGN KEY(reports_file_sender) REFERENCES users(user_id)
+        )');
+
+        //create billboards table
+		$dbh->exec('INSERT INTO user_type (user_type_name) VALUES ("Administrator"), ("Customer"), ("Employee")');
+
+        //create billboards table
+		$dbh->exec('INSERT INTO user_pp_text (user_pp_text_name) VALUES ("AD")');
+
+        //create billboards table
+		$dbh->exec('INSERT INTO users (user_full_name, user_email, user_password, user_registration_date, user_email_code, user_account_status, user_account_pp_bg, user_user_type_id, user_pp_text_id)
+        VALUES ("Administrator", "admin@admin.com", sha1("admin"), NOW(), "admin", "actived", "bg-primary", 1, 1)');
+
+        echo '
+            <p class="alert bg-success"><span class="glyphicon glyphicon-warning-sign"></span>Database created successfully !!!</p>
+            <p class="alert bg-primary"><span class="glyphicon glyphicon-warning-sign"></span>Username: <i>admin@admin.com</i> , Password: <i>admin</i></p>
+            <p class="alert bg-primary text-right"><span class="alert-left">Go to the logIn page?</span> <a href="Admin/" class="btn btn-success">yes</a></p>
+            ';
     }
     catch(PDOException $e)
     {

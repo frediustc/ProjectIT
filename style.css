@@ -3,7 +3,7 @@
     padding:20px;
     margin:5px 0;
 }
-.btn
+input.btn
 {
     padding:10px 60px;
 }
@@ -11,4 +11,9 @@ label
 {
     margin-bottom: 20px;
     margin-top: 10px;
+}
+.alert-left
+{
+    float:left;
+    padding:5px ;
 }
