@@ -54,7 +54,7 @@ if(isset($_POST['add-bill']) && !empty($_POST['add-bill']))
     if(checkNbr($data, $dataMsg) && $l)
     {
         $ins = $db->prepare('INSERT INTO billboards (billboard_location, billboard_price, billboard_width, billboard_height,
-             billboard_availability, billboard_map_lat, billboard_map_lon, billboard_map_zoom) VALUES (?, ?, ?, ?, "free", ?, ?, ?)');
+             billboard_availability, billboard_map_lat, billboard_map_lon, billboard_map_zoom, billboard_post_date) VALUES (?, ?, ?, ?, "free", ?, ?, ?, NOW())');
         $ins->execute(array($loc, $prix, $w, $h, $lat, $lon, $z));
         echo '<p class="alert bg-success"><span class="glyphicon glyphicon-ok"></span>Billboard added</p>';
     }

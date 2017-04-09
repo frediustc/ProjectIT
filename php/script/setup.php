@@ -77,7 +77,8 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	billboard_availability ENUM("free", "ordered", "rented") NOT NULL,
         	billboard_map_lat DOUBLE NOT NULL,
         	billboard_map_lon DOUBLE NOT NULL,
-        	billboard_map_zoom DOUBLE NOT NULL
+        	billboard_map_zoom DOUBLE NOT NULL,
+            billboard_post_date DATETIME NOT NULL
         )');
 
         //create billboards table
