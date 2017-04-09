@@ -30,7 +30,8 @@ include($rep . "php/include/menu.php");
     <div class="col-xs-9">
         <div class="action-table box">
             <h1 class="table-title bg-primary text-capitalize box text-center">Add Billboards</h1>
-            <form class="form-horizontal add-bill-form" method="post" action="./">
+            <form class="form-horizontal add-bill-form" method="post" action="./addbillboard.php">
+                <?php require $rep . 'php/script/admin/add_billboards.php'; ?>
                 <div class="form-group">
                     <h1 class="legend legend-left text-primary"><span class="legend-text">General Information</span></h1>
                     <div class="col-xs-6">
@@ -41,7 +42,7 @@ include($rep . "php/include/menu.php");
                         <label for="price">Price</label>
                         <div class="input-group">
                             <span class="input-group-addon">Cedis</span>
-                            <input type="number" name="price" required="" id="price" class="form-control"  placeholder="ex: 1000"/>
+                            <input type="text" name="price" required="" id="price" class="form-control"  placeholder="ex: 100.00"/>
                         </div>
 
                     </div>
@@ -52,14 +53,14 @@ include($rep . "php/include/menu.php");
                         <label for="width">Width</label>
                         <div class="input-group">
                             <span class="input-group-addon">meter</span>
-                            <input type="number" name="width" required="" id="width" class="form-control" placeholder="ex: 2.6"/>
+                            <input type="text" name="width" required="" id="width" class="form-control" placeholder="ex: 2.6"/>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <label for="height">Height</label>
                         <div class="input-group">
                             <span class="input-group-addon">meter</span>
-                            <input type="number" name="height" required="" id="height" class="form-control" placeholder="ex: 3.3" />
+                            <input type="text" name="height" required="" id="height" class="form-control" placeholder="ex: 3.3" />
                         </div>
 
                     </div>
@@ -70,31 +71,24 @@ include($rep . "php/include/menu.php");
                         <label for="lat">Lattitude</label>
                         <div class="input-group">
                             <span class="input-group-addon">decimal</span>
-                            <input type="number" name="lattitude" required="" id="lat" class="form-control" placeholder="ex: 2.685" />
+                            <input type="text" name="lattitude" required="" id="lat" class="form-control" placeholder="ex: 2.685" />
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <label for="lon">Longitude</label>
                         <div class="input-group">
                             <span class="input-group-addon">decimal</span>
-                            <input type="number" name="longitude" required="" id="lon" class="form-control" placeholder="ex: 2.685"/>
+                            <input type="text" name="longitude" required="" id="lon" class="form-control" placeholder="ex: 2.685"/>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <label for="zoom">Zoom</label>
                         <div class="input-group">
                             <span class="input-group-addon">decimal</span>
-                            <input type="number" name="zoom" required="" id="zoom" class="form-control" placeholder="ex: 2.685"/>
+                            <input type="text" name="zoom" required="" id="zoom" class="form-control" placeholder="ex: 2.685"/>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="form-group">
-                    <h1 class="legend legend-left text-primary"><span class="legend-text">Authentification</span></h1>
-                    <div class="col-xs-12">
-                        <label for="psw">Your password</label>
-                        <input type="password" name="psw" required="" id="psw" class="form-control" />
-                    </div>
-                </div> -->
                 <div class="form-group">
                     <h1 class="legend legend-left text-primary"><span class="legend-text">Authentification</span></h1>
                     <div class="col-xs-12">
