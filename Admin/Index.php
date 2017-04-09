@@ -8,7 +8,8 @@ include '../php/include/head.php';
         <div class="row">
             <div class="col-xs-4 col-xs-push-4">
                 <div class="">
-                    <form class="adminForm form-vertical box box-top box-primary" action="<?php echo './Dashboard/'; ?>">
+                    <form class="adminForm form-vertical box box-top box-primary" method="post" action="./">
+                        <?php include '../php/script/AdminLogin.php'; ?>
                         <div class="form-group">
                             <label for="admin-email">Email address</label>
                             <input type="email" name="admin-email" required="" id="admin-email" class="form-control" />
