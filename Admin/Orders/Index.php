@@ -26,7 +26,7 @@ include($rep . "php/include/menu.php");
 </div>
 
 <div class="row">
-    <div class="col-xs-10 col-xs-push-1">
+    <div class="col-xs-9">
         <div class="action-table box">
             <h1 class="table-title bg-alt text-capitalize box text-center">Billboards Orders</h1>
             <table class="data-table table table-hover">
@@ -57,5 +57,6 @@ include($rep . "php/include/menu.php");
             </table>
         </div>
     </div>
+    <?php include($rep . "php/include/admin/notif.php");?>
 </div>
 <?php include($rep . "php/include/footer.php");?>

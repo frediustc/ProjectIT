@@ -5,7 +5,7 @@ include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 ?>
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-xs-3">
         <div class="box">
             <div class="row">
                 <div class="col-xs-12 text-center">
@@ -27,7 +27,7 @@ include($rep . "php/include/menu.php");
             </div>
         </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-xs-6">
         <div class="box">
             <div class="row">
                 <div class="col-xs-12">
@@ -77,5 +77,6 @@ include($rep . "php/include/menu.php");
             </div>
         </div>
     </div>
+    <?php include($rep . "php/include/admin/notif.php");?>
 </div>
 <?php include($rep . "php/include/footer.php");?>
