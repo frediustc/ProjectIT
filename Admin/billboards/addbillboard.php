@@ -30,7 +30,7 @@ include($rep . "php/include/menu.php");
     <div class="col-xs-9">
         <div class="action-table box">
             <h1 class="table-title bg-primary text-capitalize box text-center">Add Billboards</h1>
-            <form class="form-horizontal add-bill-form">
+            <form class="form-horizontal add-bill-form" method="post" action="./">
                 <div class="form-group">
                     <h1 class="legend legend-left text-primary"><span class="legend-text">General Information</span></h1>
                     <div class="col-xs-6">
@@ -88,6 +88,13 @@ include($rep . "php/include/menu.php");
                         </div>
                     </div>
                 </div>
+                <!-- <div class="form-group">
+                    <h1 class="legend legend-left text-primary"><span class="legend-text">Authentification</span></h1>
+                    <div class="col-xs-12">
+                        <label for="psw">Your password</label>
+                        <input type="password" name="psw" required="" id="psw" class="form-control" />
+                    </div>
+                </div> -->
                 <div class="form-group">
                     <h1 class="legend legend-left text-primary"><span class="legend-text">Authentification</span></h1>
                     <div class="col-xs-12">
