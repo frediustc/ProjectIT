@@ -331,3 +331,45 @@ ul.list-continous li:last-child::after
 {
     font-size: 0.8em;
 }
+
+/*squared boxes*/
+[class*="squared-box-"]
+{
+    min-width: 20px;
+    min-height:20px;
+}
+
+/*fill parent */
+.fill-parent-resp
+{
+    position:relative;
+    box-sizing: padding-box;
+    display: inline-block;
+}
+.fill-parent-resp-w
+{
+    width:100%;
+}
+.fill-parent-resp-h
+{
+    height:100%;
+}
+.fill-parent-resp-both
+{
+    height:100%;
+    width:100%;
+}
+
+/*crop*/
+.crop
+{
+    overflow: hidden;
+}
+.crop-H
+{
+    overflow-x: hidden;
+}
+.crop-V
+{
+    overflow-y: hidden;
+}

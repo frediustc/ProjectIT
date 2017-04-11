@@ -10,10 +10,6 @@ body
     color:white;
     padding:10px 20px;
 }
-.alert{
-    color:white;
-    padding:10px 20px;
-}
 .alert span
 {
     margin-right: 10px;
@@ -22,7 +18,6 @@ body
 {
     display:none;
 }
-/*#2f323e*/
 
 /*general*/
 #menuTop
@@ -115,11 +110,7 @@ button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-
 .main-container
 {
     margin-left: 90px;
-}/*
-.legend [class*="legend-line-"]
-{
-    background: #2f323e;
-}*/
+}
 .page-title
 {
     background-color: #f1f2f3;

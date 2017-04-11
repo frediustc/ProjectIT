@@ -4,6 +4,9 @@ jQuery(document).ready(function(){
     {
         legend();
         textBlock();
+        respFill();
+        squared();
+        centerEl();
     }
     //legend
     function legend()
@@ -42,24 +45,106 @@ jQuery(document).ready(function(){
         {
             var txt_block = $('[class*="text-block-"]');
             for(var i = 0; i < txt_block.length; i++)
+            {
+                var txt_block_size = $(txt_block[i]).outerHeight();
+                var txt_block_parent_size = $(txt_block[i]).parent().outerHeight();
+                var new_pad = txt_block_parent_size - txt_block_size;
+                if($(txt_block[i]).hasClass('text-block-middle'))
                 {
-                    var txt_block_size = $(txt_block[i]).outerHeight();
-                    var txt_block_parent_size = $(txt_block[i]).parent().outerHeight();
-                    var new_pad = txt_block_parent_size - txt_block_size;
-                    if($(txt_block[i]).hasClass('text-block-middle'))
-                        {
-                            $(txt_block[i]).css({marginTop: (new_pad / 2) + 'px'});
-                        }
-                    else if($(txt_block[i]).hasClass('text-block-bottom'))
-                        {
-                            $(txt_block[i]).css({marginTop: (new_pad) + 'px'});
-                        }
+                    $(txt_block[i]).css({marginTop: (new_pad / 2) + 'px'});
                 }
+                else if($(txt_block[i]).hasClass('text-block-bottom'))
+                {
+                    $(txt_block[i]).css({marginTop: (new_pad) + 'px'});
+                }
+            }
         }
     }
-    
-    initGen();
+    //Squared
+    function squared(){
+        if($('[class*="box-squared"]').length > 0)
+        {
+            var sqr_block = $('[class*="box-squared-"]');
+            for(var i = 0; i < sqr_block.length; i++)
+            {
+                var sqr_block_h = $(sqr_block[i]).height();
+                var sqr_block_w = $(sqr_block[i]).width();
+                if($(sqr_block[i]).hasClass('box-squared-h-w'))
+                {
+                    $(sqr_block[i]).css({width: sqr_block_h + 'px'});
+                }
+                else if($(sqr_block[i]).hasClass('box-squared-w-h'))
+                {
+                    $(sqr_block[i]).css({height: sqr_block_w + 'px'});
+                }
+            }
+        }
+    }
+    //fill parent
+    function respFill(){
+        if($('[class*="fill-parent-resp"]').length > 0)
+        {
+            $('[class*="fill-parent-resp"]').ready(function(){
+                var img_res = $('[class*="fill-parent-resp"]');
+                for(var i = 0; i < img_res.length; i++)
+                {
+                    var img_res_p_h = $(img_res[i]).parent().height();
+                    var img_res_p_w = $(img_res[i]).parent().width();
+                    var img_res_h = $(img_res[i]).height();
+                    var img_res_w = $(img_res[i]).width();
+                    console.log(img_res_h + ' ' + img_res_w);
+                    if(img_res_h > img_res_w)
+                    {
+                        $(img_res[i]).addClass('fill-parent-resp-w');
+                        $(img_res[i]).addClass('center-el-H');
+                    }
+                    else if(img_res_h < img_res_w)
+                    {
+                        $(img_res[i]).addClass('fill-parent-resp-h');
+                        $(img_res[i]).addClass('center-el-W');
+                    }
+                    else {
+                        $(img_res[i]).addClass('fill-parent-resp-both');
+                        $(img_res[i]).addClass('center-el');
+                    }
+                }
+            });
+        }
+    }
+    //center
+    function centerEl(){
+        if($('[class*="center-el"]').length > 0)
+        {
+            var cen_el = $('[class*="center-el"]');
+            for(var i = 0; i < cen_el.length; i++)
+            {
+                var cen_el_p_h = $(cen_el[i]).parent().height();
+                var cen_el_p_w = $(cen_el[i]).parent().width();
+                var cen_el_h = $(cen_el[i]).height();
+                var cen_el_w = $(cen_el[i]).width();
+                if($(cen_el[i]).hasClass('center-el-H'))
+                {
+                    $(cen_el[i]).css({left: ((cen_el_p_w - cen_el_w) / 2) + 'px'});
+                }
+                else if($(cen_el[i]).hasClass('center-el-V'))
+                {
+                    $(cen_el[i]).css({top: ((cen_el_p_h - cen_el_h) / 2) + 'px'});
+                }
+                else {
+                    $(cen_el[i]).css({
+                        top: ((cen_el_p_h - cen_el_h) / 2) + 'px',
+                        left: ((cen_el_p_w - cen_el_w) / 2) + 'px'
+                    });
+                }
+            }
+        }
+    }
+
+    $(document).ready(function(){
+        initGen();
+    });
+
     $(window).resize(initGen);
-    
-     
+
+
 });
