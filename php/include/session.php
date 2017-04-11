@@ -15,8 +15,11 @@ if(isset($_SESSION['user_id']))
 }
 else
 {
-    if($page !== 'Setup page' && $page !== 'Administrator logIn')
+    if(!isset($section_type))
     {
-        header('location:' . $rep . 'Admin/');
+        if($page !== 'Setup page' && $page !== 'Administrator logIn')
+        {
+            header('location:' . $rep . 'Admin/');
+        }
     }
 }

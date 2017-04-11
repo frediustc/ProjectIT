@@ -2,7 +2,37 @@
 $rep = "../";
 $section_type = 'store';
 $page = "Store Home Page";
-include '../php/include/head.php';
+include $rep . 'php/include/head.php';
+// include $rep . 'php/include/customer/product.php';
+
+if(isset($_POST['searchAll']))
+{
+    $loc = (isset($_POST['location']) && !empty($_POST['location'])) ? trim(htmlspecialchars($_POST['location'])) : 'all';
+    $sort = (isset($_POST['sort']) && !empty($_POST['sort'])) ? trim(htmlspecialchars($_POST['sort'])) : 'date';
+    $order = (isset($_POST['order']) && !empty($_POST['order'])) ? trim(htmlspecialchars($_POST['order'])) : 'ASC';
+    $min = (isset($_POST['min-price']) && !empty($_POST['min-price'])) ? trim(htmlspecialchars($_POST['min-price'])) : 0;
+    $max = (isset($_POST['max-price']) && !empty($_POST['max-price'])) ? trim(htmlspecialchars($_POST['max-price'])) : 0;
+    $min = ($min < 0 || !is_int((int)$min) || (int)$min > (int)$max) ? 0 : $min;
+    $max = ($max <= 0 || !is_int((int)$max) || (int)$min > (int)$max) ? 1000000 : $max;
+    switch($sort)
+    {
+        case 'date' :
+            $sort = 'billboard_post_date';
+            break;
+        case 'price' :
+            $sort = 'billboard_price';
+            break;
+        case 'size' :
+            $sort = 'billboard_width';
+            break;
+        case 'avail' :
+            $sort = 'billboard_availability';
+            break;
+    }
+    $loc = '%' . $loc . '%';
+    $bills = $db->prepare('SELECT * FROM billboards WHERE billboard_location LIKE ? AND (billboard_price BETWEEN ? AND ?) ORDER BY ? ');
+    $bills->execute(array($loc, $min, $max, $sort));
+}
 ?>
 <aside class="sidebar sidebar-fixed-left" id="menuLeft">
     <div class="sidebar-fit nav text-ubillboardsercase text-center">
@@ -18,13 +48,13 @@ include '../php/include/head.php';
     <div class="row">
         <div class="col-xs-12">
             <div class="box box-top box-primary">
-                <h1 class="text-center">Search for a Billboard</h1>
-                <form class="form-search">
+                <h1 class="text-center">Search for a Billboard<?php echo $sort ;?></h1>
+                <form class="form-search" method="post" action="./">
                     <div class="form-group">
                       <label for="search" class="sr-only">Make by location</label>
                       <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-map-marker"></span></span>
-                        <input type="search" class="form-control" id="search" placeholder="Type your location here">
+                        <input type="search" class="form-control" id="search" name="location" placeholder="Type your location here" required="">
                       </div>
                     </div>
                     <div class="form-group">
@@ -34,18 +64,19 @@ include '../php/include/head.php';
                                 <select id="sort" name="sort" class="form-control">
                                     <option value="date">date</option>
                                     <option value="price">price</option>
+                                    <option value="size">size</option>
                                     <option value="avail">availability</option>
                                 </select>
                             </div>
                             <div class="col-xs-3">
                                 <label for="order">Order</label>
                                 <select id="order" name="order" class="text-center form-control">
-                                    <option value="date">Ascendant</option>
-                                    <option value="location">Descendant</option>
+                                    <option value="ASC">Ascendant</option>
+                                    <option value="DESC">Descendant</option>
                                 </select>
                             </div>
                             <div class="col-xs-6">
-                                <label for="price">Search by Price</label>
+                                <label for="price">Search by Price in cedis</label>
                                 <div class="row">
                                     <div class="col-xs-4">
                                         <div class="input-group">
@@ -71,15 +102,17 @@ include '../php/include/head.php';
         </div>
     </div>
     <div class="row">
+    <?php if (!empty($bills)) {
+        while($bill = $bills->fetch())
+        { ?>
         <div class="col-md-6 col-lg-3">
             <div class="box crop box-squared-w-h">
                 <img src="../media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive center-el-V"/>
                 <div class="infobill text-center trans">
                     <div class="text-block center-el-V">
                         <div class="trans">
-                            <h1 class="text-success">$70 <br> <small>per Month</small></h1>
+                            <h1 class="text-success"><?php echo $bill['billboard_id'] ; ?><br><small>per Month</small></h1>
                             <p class="loc"><span class="glyphicon glyphicon-map-marker"></span>Labone</p>
-                            <!-- <p>This billboard located at <b><i>Labone</i></b> has a width of <b><i>2 meters</i></b> and an height of <b><i>5 meters</i></b></p> -->
                             <p>
                                 <a href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-search"></span></a>
                                 <button href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span></button>
@@ -89,61 +122,7 @@ include '../php/include/head.php';
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="box crop box-squared-w-h">
-                <img src="../media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive center-el-V"/>
-                <div class="infobill text-center trans">
-                    <div class="text-block center-el-V">
-                        <div class="trans">
-                            <h1 class="text-success">$70 <br> <small>per Month</small></h1>
-                            <p class="loc"><span class="glyphicon glyphicon-map-marker"></span>Labone</p>
-                            <!-- <p>This billboard located at <b><i>Labone</i></b> has a width of <b><i>2 meters</i></b> and an height of <b><i>5 meters</i></b></p> -->
-                            <p>
-                                <a href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-search"></span></a>
-                                <button href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span></button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="box crop box-squared-w-h">
-                <img src="../media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive center-el-V"/>
-                <div class="infobill text-center trans">
-                    <div class="text-block center-el-V">
-                        <div class="trans">
-                            <h1 class="text-success">$70 <br> <small>per Month</small></h1>
-                            <p class="loc"><span class="glyphicon glyphicon-map-marker"></span>Labone</p>
-                            <!-- <p>This billboard located at <b><i>Labone</i></b> has a width of <b><i>2 meters</i></b> and an height of <b><i>5 meters</i></b></p> -->
-                            <p>
-                                <a href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-search"></span></a>
-                                <button href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span></button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="box crop box-squared-w-h">
-                <img src="../media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive center-el-V"/>
-                <div class="infobill text-center trans">
-                    <div class="text-block center-el-V">
-                        <div class="trans">
-                            <h1 class="text-success">$70 <br> <small>per Month</small></h1>
-                            <p class="loc"><span class="glyphicon glyphicon-map-marker"></span>Labone</p>
-                            <!-- <p>This billboard located at <b><i>Labone</i></b> has a width of <b><i>2 meters</i></b> and an height of <b><i>5 meters</i></b></p> -->
-                            <p>
-                                <a href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-search"></span></a>
-                                <button href="articles/?id=1" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span></button>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php } } ?>
     </div>
-
 
 <?php include '../php/include/footer.php'; ?>
