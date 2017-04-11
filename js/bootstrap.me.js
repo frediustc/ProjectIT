@@ -76,6 +76,7 @@ jQuery(document).ready(function(){
                 else if($(sqr_block[i]).hasClass('box-squared-w-h'))
                 {
                     $(sqr_block[i]).css({height: sqr_block_w + 'px'});
+                    console.log('done: ' + sqr_block_w);
                 }
             }
         }
