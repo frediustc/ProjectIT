@@ -20,7 +20,18 @@ body
 #menuLeft.sidebar ul li a
 {
     display: inline-block;
-    padding: 5px;
+    padding: 10px 0;
+    width:100%;
+    color:#627987;
+    margin: 5px 0;
+    /*border-left: 2px solid #627987;*/
+}
+#menuLeft.sidebar ul li a:hover, #menuLeft.sidebar ul li a.actived
+{
+    background-color: #FF5555;
+    /*border-left: 2px solid #FF5555;*/
+    color:#eee;
+    text-decoration: none;
 }
 .container-fluid
 {

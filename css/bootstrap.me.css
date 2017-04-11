@@ -343,8 +343,6 @@ ul.list-continous li:last-child::after
 .fill-parent-resp
 {
     position:relative;
-    box-sizing: padding-box;
-    display: inline-block;
 }
 .fill-parent-resp-w
 {

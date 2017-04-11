@@ -4,9 +4,9 @@ jQuery(document).ready(function(){
     {
         legend();
         textBlock();
-        respFill();
         squared();
         centerEl();
+        respFill();
     }
     //legend
     function legend()
@@ -15,27 +15,27 @@ jQuery(document).ready(function(){
         {
             var lgd = $('.legend');
             for(var i = 0; i < lgd.length; i++)
+            {
+                var lgd_size = $(lgd[i]).outerWidth();
+                var lgd_txt_size = $(lgd[i]).find('.legend-text').outerWidth();
+                var new_size = lgd_size - lgd_txt_size;
+                if($(lgd[i]).hasClass("legend-right"))
                 {
-                    var lgd_size = $(lgd[i]).outerWidth();
-                    var lgd_txt_size = $(lgd[i]).find('.legend-text').outerWidth();
-                    var new_size = lgd_size - lgd_txt_size;
-                    if($(lgd[i]).hasClass("legend-right"))
-                        {
-                            $(lgd[i]).find('.legend-text').before('<span class="legend-line-left"></span>');
-                            $(lgd[i]).find('.legend-line-left').width(new_size);
-                        }
-                    else if($(lgd[i]).hasClass("legend-center"))
-                        {
-                            $(lgd[i]).find('.legend-text').before('<span class="legend-line-left"></span>').after('<span class="legend-line-right"></span>');
-                            $(lgd[i]).find('.legend-line-left').width(new_size / 2);
-                            $(lgd[i]).find('.legend-line-right').width(new_size / 2);
-                        }
-                    else
-                        {
-                            $(lgd[i]).find('.legend-text').after('<span class="legend-line-right"></span>');
-                            $(lgd[i]).find('.legend-line-right').width(new_size);
-                        }
+                    $(lgd[i]).find('.legend-text').before('<span class="legend-line-left"></span>');
+                    $(lgd[i]).find('.legend-line-left').width(new_size);
                 }
+                else if($(lgd[i]).hasClass("legend-center"))
+                {
+                    $(lgd[i]).find('.legend-text').before('<span class="legend-line-left"></span>').after('<span class="legend-line-right"></span>');
+                    $(lgd[i]).find('.legend-line-left').width(new_size / 2);
+                    $(lgd[i]).find('.legend-line-right').width(new_size / 2);
+                }
+                else
+                {
+                    $(lgd[i]).find('.legend-text').after('<span class="legend-line-right"></span>');
+                    $(lgd[i]).find('.legend-line-right').width(new_size);
+                }
+            }
         }
     }
     //text block
@@ -95,24 +95,24 @@ jQuery(document).ready(function(){
                     console.log(img_res_h + ' ' + img_res_w);
                     if(img_res_h > img_res_w)
                     {
-                        $(img_res[i]).addClass('fill-parent-resp-w');
                         $(img_res[i]).addClass('center-el-H');
+                        $(img_res[i]).addClass('fill-parent-resp-w');
                     }
                     else if(img_res_h < img_res_w)
                     {
-                        $(img_res[i]).addClass('fill-parent-resp-h');
                         $(img_res[i]).addClass('center-el-W');
+                        $(img_res[i]).addClass('fill-parent-resp-h');
                     }
-                    else {
+                    else
+                    {
                         $(img_res[i]).addClass('fill-parent-resp-both');
-                        $(img_res[i]).addClass('center-el');
                     }
                 }
             });
         }
     }
     //center
-    function centerEl(){
+    function centerEl(el){
         if($('[class*="center-el"]').length > 0)
         {
             var cen_el = $('[class*="center-el"]');
@@ -122,6 +122,7 @@ jQuery(document).ready(function(){
                 var cen_el_p_w = $(cen_el[i]).parent().width();
                 var cen_el_h = $(cen_el[i]).height();
                 var cen_el_w = $(cen_el[i]).width();
+                console.log();
                 if($(cen_el[i]).hasClass('center-el-H'))
                 {
                     $(cen_el[i]).css({left: ((cen_el_p_w - cen_el_w) / 2) + 'px'});
