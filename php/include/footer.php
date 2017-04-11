@@ -4,18 +4,18 @@
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php echo $rep; ?>../js/plugins/jquery.min.js"></script>
+    <script src="<?php echo $rep; ?>js/plugins/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo $rep; ?>../bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo $rep; ?>../js/bootstrap.me.js"></script>
+    <script src="<?php echo $rep; ?>bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo $rep; ?>js/bootstrap.me.js"></script>
     <!-- High Chart -->
-    <?php echo ($page === 'Admin Dashboard') ? '<script src="' . $rep . '../js/plugins/highcharts.js"></script>' : null; ?>
-    <?php echo ($page === 'Admin Dashboard') ? '<script src="http://chartwidget/myChart.js"></script>' : null; ?>
+    <?php echo ($page === 'Admin Dashboard') ? '<script src="' . $rep . 'js/plugins/highcharts.js"></script>' : null; ?>
+    <?php echo ($page === 'Admin Dashboard') ? '<script src="'. $rep . 'Asset/Widgets/Chart/myChart.js"></script>' : null; ?>
     <?php echo ($page === 'Setup page') ? '<script src="js/jsScan/setup.js"></script>' : null; ?>
     <!--general js script -->
-    <script src="<?php echo $rep; ?>../js/general.js"></script>
+    <script src="<?php echo $rep; ?>js/general.js"></script>
     <!-- for admin dashboard -->
-    <script src="<?php echo $rep; ?>../js/plugins/jquery-ui.min.js"></script>
+    <script src="<?php echo $rep; ?>js/plugins/jquery-ui.min.js"></script>
     <?php echo ($page === 'Admin Dashboard') ? "
     <script>
     $('#calendar').datepicker({

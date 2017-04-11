@@ -16,7 +16,7 @@ include  $rep . 'php/include/session.php';
     <link href="<?php echo $rep; ?>bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/bootstrap.me.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/font/myIcon/style.css" rel="stylesheet" />
-    <link href="http://calendar/style.css" rel="stylesheet" />
+    <link href="<?php echo $rep; ?>Asset/Widgets/Calendar/style.css" rel="stylesheet" />
     <link href="<?php echo $rep; ?>css/admin.css" rel="stylesheet" />
     <?php ($page === 'Admin Billboards' || $page === 'Admin Rents' || $page === 'Admin Reports' || $page === 'Admin Orders') ? print '<link href="'. $rep .'css/table.css" rel="stylesheet" />' : null; ?>
     <link href="style.css" rel="stylesheet" />
