@@ -53,6 +53,52 @@
             });
         });
     </script>
+    <script>
+    $( function() {
+      var dateFormat = "dd/mm/yy",
+      rent = [["15-04-2017","20-04-2017"], ["24-04-2017", "28-04-2017"]],
+        from = $( "#datepickerFrom" )
+          .datepicker({
+              beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+                return [ rent.indexOf(string) == -1 ];
+            },
+            defaultDate: "+1w",
+            changeMonth: true
+          })
+          .on( "change", function() {
+            to.datepicker( "option", "minDate", getDate( this ) );
+          }),
+        to = $( "#datepickerTo" ).datepicker({
+          defaultDate: "+1w",
+          changeMonth: true
+        })
+        .on( "change", function() {
+          from.datepicker( "option", "maxDate", getDate( this ) );
+        });
+
+      function getDate( element ) {
+        var date;
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+
+        return date;
+      }
+    } );
+    // $( function() {
+    //     var array = ["15-04-2017","20-04-2017","19-04-2017"];
+    //
+    //   $( "#datepicker" ).datepicker({
+    //       beforeShowDay: function(date){
+    //           var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+    //           return [ array.indexOf(string) == -1 ];
+    //       }
+    //   });
+    // } );
+    </script>
 </body>
 
 </html>

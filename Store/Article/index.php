@@ -6,7 +6,7 @@ include $rep . 'php/include/head.php';
 include $rep . 'php/include/store/menu.php';
 ?>
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-7">
             <div class="box">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
@@ -48,24 +48,73 @@ include $rep . 'php/include/store/menu.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-5 info">
             <div class="box">
-                <p class="legend legend-center text-primary"><span class="legend-text">Location</span></p>
-                <p class="text-center h2">Labone</p>
-                <p class="legend legend-center text-primary"><span class="legend-text">Price</span></p>
-                <p class="text-center h2">750 cedis</p>
-                <p class="legend legend-center text-primary"><span class="legend-text">Size</span></p>
-                <p class="text-center h2">5m x 3m</p>
-                <p class="legend legend-center text-primary"><span class="legend-text">Status</span></p>
-                <p class="text-center h2">Available</p>
-                <p class="legend legend-center text-primary"><span class="legend-text">Action</span></p>
-                <form class="" action="index.html" method="post">
+                <h2 class="title-box bg-alt text-center box">Information</h2>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="text-primary">Location</p>
+                        <p class="h2">Labone</p>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <p class="text-primary">Price</p>
+                        <p class="h2">750Ghc</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="text-primary">Size</p>
+                        <p class="h2">3m. x 6m.</p>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <p class="text-primary">Status</p>
+                        <p class="h2">Available</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box signopt" id="rent-order">
+                <h2 class="title-box bg-success text-center box">Rents / Orders</h2>
+                <ul class="list-unstyled order-rent-history">
+                    <li class="text-center">Rented from 12/4/2017 to 31/12/2017 <span class="label label-success">6 months</span></li>
+                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">6 months</span></li>
+                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">6 months</span></li>
+                </ul>
+            </div>
+            <div class="box signopt">
+                <h2 class="title-box bg-primary text-center box">Sign to order</h2>
+                <ul class="list-unstyled option-log">
+                    <li class="text-center"><button class="btn btn-success bg-success box-rounded">Sign In</button></li>
+                    <li>
+                        <p class="legend legend-center"><span class="legend-text">or</span></p>
+                    </li>
+                    <li class="text-center"><button class="btn btn-primary bg-primary box-rounded">Sign Up</button></li>
+                </ul>
+            </div>
+            <div class="box signopt">
+                <h2 class="title-box bg-warning text-center box">order</h2>
+
+                <form class="orderit" action="#" method="post">
+                    <p class="alert alert-danger">the Billboard will not be free for this duration starting from 3/04/2014 check the <a href="#rent-order">rent and orders list</a></p>
                     <div class="form-group">
-                      <label for=""></label>
-                      <input type="text" class="form-control" id="" placeholder="">
+                      <label for="">Select a date from</label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input type="text" class="form-control" id="datepickerFrom" placeholder="04/11/2017">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Select a date to</label>
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        <input type="text" class="form-control" id="datepickerTo" placeholder="04/11/2017">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button class="card btn btn-3d btn-success bg-success" type="submit" disabled="">Add to card</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 <?php include $rep . 'php/include/footer.php'; ?>
