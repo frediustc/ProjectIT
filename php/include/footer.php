@@ -75,7 +75,6 @@
         }
 
         var rent = disabledList(listDate);
-        console.log(rent);
 
         var from = $( "#datepickerFrom" )
           .datepicker({
