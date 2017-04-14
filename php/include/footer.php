@@ -55,12 +55,32 @@
     </script>
     <script>
     $( function() {
-      var dateFormat = "dd/mm/yy",
-      rent = [["15-04-2017","20-04-2017"], ["24-04-2017", "28-04-2017"]],
-        from = $( "#datepickerFrom" )
+
+        var listDate = [[new Date('2017-04-11'), new Date('2017-04-14')], [new Date('2017-04-16'), new Date('2017-05-18')]];
+        var disabledList = function (listDate)
+        {
+            var _list = [];
+            for(var i = 0; listDate.length > i; i++ )
+            {
+                while(listDate[i][0] <= listDate[i][1])
+                {
+                    var m = (listDate[i][0].getMonth() > 9) ? (listDate[i][0].getMonth() + 1) : '0' + (listDate[i][0].getMonth() + 1);
+                    var d = (listDate[i][0].getDate() > 9) ? listDate[i][0].getDate() : '0' + listDate[i][0].getDate();
+                    var y = listDate[i][0].getYear() + 1900;
+                    _list.push( m + '-' + d + '-' + y);
+                    listDate[i][0].setDate(listDate[i][0].getDate() + 1);
+                }
+            }
+            return _list;
+        }
+
+        var rent = disabledList(listDate);
+        console.log(rent);
+
+        var from = $( "#datepickerFrom" )
           .datepicker({
               beforeShowDay: function(date){
-                var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+                var string = jQuery.datepicker.formatDate('mm-dd-yy', date);
                 return [ rent.indexOf(string) == -1 ];
             },
             defaultDate: "+1w",
@@ -70,6 +90,10 @@
             to.datepicker( "option", "minDate", getDate( this ) );
           }),
         to = $( "#datepickerTo" ).datepicker({
+            beforeShowDay: function(date){
+                var string = jQuery.datepicker.formatDate('mm-dd-yy', date);
+                return [ rent.indexOf(string) == -1 ];
+          },
           defaultDate: "+1w",
           changeMonth: true
         })
@@ -88,16 +112,6 @@
         return date;
       }
     } );
-    // $( function() {
-    //     var array = ["15-04-2017","20-04-2017","19-04-2017"];
-    //
-    //   $( "#datepicker" ).datepicker({
-    //       beforeShowDay: function(date){
-    //           var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-    //           return [ array.indexOf(string) == -1 ];
-    //       }
-    //   });
-    // } );
     </script>
 </body>
 

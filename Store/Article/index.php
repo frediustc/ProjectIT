@@ -99,14 +99,14 @@ include $rep . 'php/include/store/menu.php';
                       <label for="">Select a date from</label>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input type="text" class="form-control" id="datepickerFrom" placeholder="04/11/2017">
+                        <input type="text" class="form-control pickDate" id="datepickerFrom" placeholder="04/11/2017">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="">Select a date to</label>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input type="text" class="form-control" id="datepickerTo" placeholder="04/11/2017">
+                        <input type="text" class="form-control pickDate" id="datepickerTo" placeholder="04/11/2017">
                       </div>
                     </div>
                     <div class="form-group">
