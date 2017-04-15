@@ -29,10 +29,10 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "frediustc@gmail.com";
+$mail->Username = "ddfj.pit@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "resurection";
+$mail->Password = "p@ssword2016";
 
 //Set who the message is to be sent from
 $mail->setFrom('donotreply@support.com', 'Holala Store');

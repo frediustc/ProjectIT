@@ -19,21 +19,28 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['psw']) && 
         $user = $users->fetch();
         if(!empty($user))
         {
-            if($user['user_user_type_id'] != 1 && $user['user_account_status'] == 'actived')
+            if($user['user_user_type_id'] != 1)
             {
-                $_SESSION['user_id'] = $user['user_id'];
+                if ($user['user_account_status'] == 'actived') {
+                    $_SESSION['user_id'] = $user['user_id'];
+                    header('location: ./');
+                }
+                else {
+                    echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Go to your email to activate your account <a href="../verifMsg/">click here</a></p>';
+                }
+
             }
             else
             {
-                echo '<p class="alert alert-fixed-bottom-right bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Sorry but you are not the Admin</p>';
+                echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Sorry but you are not the Admin</p>';
             }
 
         }
         else {
-            echo '<p class="alert alert-fixed-bottom-right bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Email or password is wrong</p>';
+            echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Email or password is wrong</p>';
         }
     }
     else {
-        echo '<p class="alert alert-fixed-bottom-right bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Empty field</p>';
+        echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Empty field</p>';
     }
 }
