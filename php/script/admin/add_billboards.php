@@ -33,8 +33,11 @@ if(isset($_POST['add-bill']) && !empty($_POST['add-bill']))
                 $ar[$i] = (double)$ar[$i];
                 if(!is_double($ar[$i]) || $ar[$i] <= 0)
                 {
-                    echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>' . $dataMsg[$i] . $ar[$i] .'</p>';
-                    $out = false;
+                    if($i != 3 && $i != 4)
+                    {
+                        echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>' . $dataMsg[$i] . $ar[$i] .'</p>';
+                        $out = false;
+                    }
                 }
             }
             return $out;

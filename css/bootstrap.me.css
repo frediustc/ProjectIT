@@ -387,3 +387,25 @@ ul.list-continous li:last-child::after
     display: inline-block;
     position:relative;
 }
+
+/*alert*/
+.alert[class*="alert-fixed-"]
+{
+    position: fixed;
+}
+.alert[class*="-bottom"]
+{
+    bottom: 10px;
+}
+.alert[class*="-top"]
+{
+    top: 10px;
+}
+.alert[class*="-left"]
+{
+    top: 10px;
+}
+.alert[class*="-right"]
+{
+    top: 10px;
+}

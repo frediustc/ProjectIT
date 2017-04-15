@@ -43,11 +43,19 @@ h1
 }
 .card-previous .btn
 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding:0;
     margin:0;
     line-height: 1em;
     position:relative;
     top:-1px;
     background-color: transparent;
+}
+#map
+{
+    min-height: 400px;
+}
+p.alert
+{
+    color:white;
 }
