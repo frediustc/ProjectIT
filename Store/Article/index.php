@@ -27,8 +27,6 @@ else {
                   <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
                   </ol>
 
                   <!-- Wrapper for slides -->
@@ -38,15 +36,7 @@ else {
                     </div>
 
                     <div class="item">
-                        <img src="<?php echo $rep; ?>media/images/billboards/2.jpg" alt="Picture Billboards" class="img-responsive"/>
-                    </div>
-
-                    <div class="item">
-                        <img src="<?php echo $rep; ?>media/images/billboards/6.jpg" alt="Picture Billboards" class="img-responsive"/>
-                    </div>
-
-                    <div class="item">
-                        <img src="<?php echo $rep; ?>media/images/billboards/4.jpg" alt="Picture Billboards" class="img-responsive"/>
+                        <img src="<?php echo $rep; ?>media/images/billboards/4.png" alt="Picture Billboards" class="img-responsive"/>
                     </div>
                   </div>
 

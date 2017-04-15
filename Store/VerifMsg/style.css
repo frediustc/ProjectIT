@@ -1,0 +1,12 @@
+form
+{
+    margin:100px auto;
+}
+.form-control
+{
+    margin:20px 0;
+}
+a{
+    color:white;
+    text-decoration: underline;
+}
