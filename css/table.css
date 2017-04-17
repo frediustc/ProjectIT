@@ -38,6 +38,7 @@
     padding:15px 5px;
     color:#999;
 }
+
 .table.table-hover tr td a:hover, .table.table-hover tr th a:hover
 {
     color:#999;
@@ -46,12 +47,13 @@
 {
     margin:0 10px;
 }
-.data-table .btn
+.table.table-hover tbody tr td a.btn, .data-table .btn
 {
+    padding:5px 8px;
     margin:0 5px;
     color:white;
 }
-.data-table .btn:hover
+.table.table-hover tbody tr td a.btn:hover, .data-table .btn:hover
 {
     color:black;
 }
