@@ -1,6 +1,4 @@
 <script>
-$( function() {
-
     var listDate = [[new Date('2017-04-11'), new Date('2017-04-14')], [new Date('2017-04-16'), new Date('2017-05-18')]];
     var disabledList = function (listDate)
     {
@@ -55,7 +53,6 @@ $( function() {
 
     return date;
   }
-} );
 </script>
 <?php if(!empty($pdct['billboard_map_lat']) && !empty($pdct['billboard_map_lon']) && !empty($pdct['billboard_map_zoom']))
 { ?>
@@ -75,3 +72,60 @@ $( function() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKnq0whu8gFu9THGpFyurNy_TNI_pFKyY&callback=initMap"
 async defer></script>
 <?php } ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('.orderit input').change(function(event) {
+        var inp = $('.orderit input');
+        var changed = true;
+        var breaks = false;
+        var startdate = $(inp[0]).val().replace(/\//g, '-');
+        var enddate = $(inp[1]).val().replace(/\//g, '-');
+        for(var i = 0; i < inp.length; i++)
+        {
+            if($(inp[i]).val() === '')
+            {
+                changed = false;
+            }
+        }
+
+        for(var i = 0 ; i < rent.length; i++)
+        {
+            if(startdate <= rent[i] && enddate >= rent[i])
+            {
+                breaks = true;
+            }
+        }
+        if(!breaks)
+        {
+            if(changed)
+            {
+                if(enddate > startdate)
+                {
+                    $('.orderMsg').text('').fadeOut(500);
+                    $('.orderit button').attr('disabled', false);
+                }
+                else
+                {
+                    $('.orderit button').attr('disabled', true);
+                    $('.orderMsg').text('your starting date must be lower than your ending date check the ').append('<a href="#rent-order">rent and orders list</a>').fadeIn(500);
+                }
+            }
+        }
+        else
+        {
+            $('.orderit button').attr('disabled', true);
+            $('.orderMsg').text('you can\'t order during this periode because some has order this banner within this same periode select a continous time check the ').append('<a href="#rent-order">rent and orders list</a>').fadeIn(500);
+        }
+        $('.orderit').on('submit', function(e){
+            // if(breaks || !changed || enddate < startdate)
+            // {
+            //     e.preventDefault();
+            //     // return false;
+            // }
+        });
+    });
+});
+
+</script>
+<script src="<?php echo $rep; ?>js/order.js"></script>

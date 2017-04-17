@@ -20,6 +20,7 @@ else {
             <?php
             include $rep . 'php/script/storeLogin.php';
             include $rep . 'php/script/storeSignUp.php';
+            include $rep . 'php/script/order.php';
             ?>
             <div class="box">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -82,9 +83,9 @@ else {
             <div class="box signopt" id="rent-order">
                 <h2 class="title-box bg-success text-center box">Rents / Orders</h2>
                 <ul class="list-unstyled order-rent-history">
-                    <li class="text-center">Rented from 12/4/2017 to 31/12/2017 <span class="label label-success">6 months</span></li>
-                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">6 months</span></li>
-                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">6 months</span></li>
+                    <li class="text-center">Rented from 12/4/2017 to 31/12/2017 <span class="label label-success">actived</span></li>
+                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">pending</span></li>
+                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-success">actived</span></li>
                 </ul>
             </div>
             <?php if(!isset($_SESSION['user_id']))
@@ -165,31 +166,34 @@ else {
                   </div>
                 </div>
         <?php } ?>
-
+            <?php if(isset($_SESSION['user_id']))
+            { ?>
             <div class="box signopt">
                 <h2 class="title-box bg-warning text-center box">order</h2>
 
-                <form class="orderit" action="#" method="post">
-                    <p class="alert alert-danger">the Billboard will not be free for this duration starting from 3/04/2014 check the <a href="#rent-order">rent and orders list</a></p>
+                <form class="orderit" action="<?php echo './?id=' . $pdct['billboard_id']; ?>" method="post">
+                    <p class="alert bg-danger orderMsg"></p>
+
                     <div class="form-group">
                       <label for="">Select a date from</label>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input type="text" class="form-control pickDate" id="datepickerFrom" placeholder="04/11/2017">
+                        <input type="text" class="form-control pickDate" name="sd" id="datepickerFrom" placeholder="04/16/2017">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="">Select a date to</label>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                        <input type="text" class="form-control pickDate" id="datepickerTo" placeholder="04/11/2017">
+                        <input type="text" class="form-control pickDate" name="ed" id="datepickerTo" placeholder="04/15/2017">
                       </div>
                     </div>
                     <div class="form-group">
-                      <button class="card btn btn-3d btn-success bg-success" type="submit" disabled="">Add to card</button>
+                      <button class="card btn btn-3d btn-success bg-success" name="orderitnow" type="submit" disabled="">Order it now</button>
                     </div>
                 </form>
             </div>
+            <?php } ?>
         </div>
     </div>
 

@@ -23,7 +23,7 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['psw']) && 
             {
                 if ($user['user_account_status'] == 'actived') {
                     $_SESSION['user_id'] = $user['user_id'];
-                    header('location: ./');
+                    // header($_SERVER['HTTP_REFERER']);
                 }
                 else {
                     echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Go to your email to activate your account <a href="../verifMsg/">click here</a></p>';

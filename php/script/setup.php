@@ -88,7 +88,7 @@ if(isset($_POST['setup-server']) && !empty($_POST['setup-server']) && isset($_PO
         	order_user_id INT(11) UNSIGNED NOT NULL,
         	order_billboard_id INT(11) UNSIGNED NOT NULL,
         	FOREIGN KEY(order_user_id) REFERENCES users(user_id),
-        	FOREIGN KEY(order_billboard_id) REFERENCES billboard(billboard_id)
+        	FOREIGN KEY(order_billboard_id) REFERENCES billboards(billboard_id)
         )');
 
         //create rents table
