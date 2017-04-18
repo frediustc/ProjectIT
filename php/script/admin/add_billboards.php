@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['add-bill']) && !empty($_POST['add-bill']))
+if(isset($_POST['add-bill']) && !empty($_POST['add-bill'])  && $u_id == 1)
 {
     function sanitizer($in)
     {
@@ -44,7 +44,7 @@ if(isset($_POST['add-bill']) && !empty($_POST['add-bill']))
         }
     };
     $l = true;
-    if(!preg_match("#^[a-zA-Z0-9 \-]{5,30}$#", $loc))
+    if(!preg_match("#^[a-zA-Z0-9 \-]{5,100}$#", $loc))
     {
         echo '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>Location Empty</p>';
         $l = false;
