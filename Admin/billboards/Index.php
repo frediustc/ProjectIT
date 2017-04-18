@@ -34,21 +34,13 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
             <h1 class="table-title bg-primary text-capitalize box text-center">Posted Billboards</h1>
             <p class="text-right addbill"><a href="./addbillboard.php" class="btn-3d btn-lg btn btn-success bg-success">Add Billboards</a></p>
             <?php
-            // while ($eachBill = $selbill->fetch()) {
-            //     if (!empty($eachBill)) {
-            //     }
-            //     else
-            //     {
-            //
-            //     }
-            // }
             if (!empty($selbill)) { ?>
                 <table class="data-table table table-hover">
                     <thead>
                         <tr class="text-primary">
                             <th class="text-center text-capitalize">ID</th>
                             <th class="text-center text-capitalize">Location</th>
-                            <th class="text-center text-capitalize">Posted date</th>
+                            <th class="text-center text-capitalize">Posted since</th>
                             <th class="text-center text-capitalize">Files</th>
                             <th class="text-center text-capitalize">Mapped</th>
                             <th class="text-center text-capitalize">Status</th>
@@ -57,18 +49,23 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
                     </thead>
                     <tbody class="text-center">
                 <?php
-                while ($eachbill = $selbill->fetch()) { ?>
+                while ($eachbill = $selbill->fetch()) {
+                    $ct = $db->prepare('SELECT COUNT(*) AS ct FROM billboards_img WHERE billboards_img_billboard_id = ?');
+                    $ct->execute(array($eachbill['billboard_id']));
+                    $count = $ct->fetch();
+                    ?>
                     <tr>
                         <td class="text-danger">#<?php echo $eachbill['billboard_id']; ?></td>
-                        <td><?php echo $eachbill['billboard_location']; ?></td>
-                        <td><?php echo $eachbill['billboard_post_date']; ?></td>
-                        <td>2</td>
-                        <td><?php echo ($eachbill['billboard_map_lat'] > 0 && $eachbill['billboard_map_lon'] > 0 && $eachbill['billboard_map_zoom'] > 0) ? 'yes' : 'no'; ?></td>
-                        <td><?php echo $eachbill['billboard_availability']; ?></td>
+                        <td class="text-capitalize"><?php echo $eachbill['billboard_location']; ?></td>
+                        <td class="text-capitalize"><?php echo $eachbill['billboard_post_date']; ?></td>
+                        <td class="text-capitalize"><?php echo $count['ct']; ?></td>
+                        <td class="text-capitalize"><?php echo ($eachbill['billboard_map_lat'] > 0 && $eachbill['billboard_map_lon'] > 0 && $eachbill['billboard_map_zoom'] > 0) ? 'yes' : 'no'; ?></td>
+                        <td class="text-capitalize"><?php echo $eachbill['billboard_availability']; ?></td>
                         <td>
-                            <button class="btn bg-success glyphicon glyphicon-eye-open"></button>
-                            <button class="btn bg-primary glyphicon glyphicon-edit"></button>
-                            <button class="btn bg-danger glyphicon glyphicon-trash"></button>
+                            <a href="./addImages.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-alt glyphicon glyphicon-picture" title="add pictures"></a>
+                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-success glyphicon glyphicon-eye-open" title="more details"></a>
+                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-primary glyphicon glyphicon-edit" title=""></a>
+                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-danger glyphicon glyphicon-trash" title=""></a>
                         </td>
                     </tr>
             <?php } ?>
