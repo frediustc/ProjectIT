@@ -63,8 +63,8 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
                         <td class="text-capitalize"><?php echo $eachbill['billboard_availability']; ?></td>
                         <td>
                             <a href="./addImages.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-alt glyphicon glyphicon-picture" title="add pictures"></a>
-                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-success glyphicon glyphicon-eye-open" title="more details"></a>
-                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-primary glyphicon glyphicon-edit" title=""></a>
+                            <a href="./view.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-success glyphicon glyphicon-eye-open" title="more details"></a>
+                            <a href="editbillboard.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-primary glyphicon glyphicon-edit" title=""></a>
                             <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-danger glyphicon glyphicon-trash" title=""></a>
                         </td>
                     </tr>
