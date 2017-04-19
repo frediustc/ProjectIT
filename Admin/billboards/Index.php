@@ -4,7 +4,8 @@ $rep = "../../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 
-$selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIMIT 20');
+include 'delete.php';
+$selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date DESC LIMIT 20 ');
 ?>
 
 <div class="row">
@@ -53,11 +54,12 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
                     $ct = $db->prepare('SELECT COUNT(*) AS ct FROM billboards_img WHERE billboards_img_billboard_id = ?');
                     $ct->execute(array($eachbill['billboard_id']));
                     $count = $ct->fetch();
+                    $posted_date = DateTime::createFromFormat('Y-m-d H:i:s', $eachbill['billboard_post_date']);
                     ?>
                     <tr>
                         <td class="text-danger">#<?php echo $eachbill['billboard_id']; ?></td>
                         <td class="text-capitalize"><?php echo $eachbill['billboard_location']; ?></td>
-                        <td class="text-capitalize"><?php echo $eachbill['billboard_post_date']; ?></td>
+                        <td class="text-capitalize"><?php echo elapsed_time($posted_date->getTimestamp()); ?></td>
                         <td class="text-capitalize"><?php echo $count['ct']; ?></td>
                         <td class="text-capitalize"><?php echo ($eachbill['billboard_map_lat'] > 0 && $eachbill['billboard_map_lon'] > 0 && $eachbill['billboard_map_zoom'] > 0) ? 'yes' : 'no'; ?></td>
                         <td class="text-capitalize"><?php echo $eachbill['billboard_availability']; ?></td>
@@ -65,7 +67,9 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
                             <a href="./addImages.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-alt glyphicon glyphicon-picture" title="add pictures"></a>
                             <a href="./view.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-success glyphicon glyphicon-eye-open" title="more details"></a>
                             <a href="editbillboard.php?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-primary glyphicon glyphicon-edit" title=""></a>
-                            <a href="#?id=<?php echo $eachbill['billboard_id']; ?>" class="btn bg-danger glyphicon glyphicon-trash" title=""></a>
+                            <form class="btn-form form-inline" action="./" method="post">
+                                <button type="submit" name="delete" value="<?php echo $eachbill['billboard_id']; ?>" class="delete btn bg-danger glyphicon glyphicon-trash" title=""></a>
+                            </form>
                         </td>
                     </tr>
             <?php } ?>
@@ -82,4 +86,19 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date LIM
     </div>
     <?php include($rep . "php/include/admin/notif.php");?>
 </div>
+<script>
+//<!--
+var del = document.querySelectorAll('.delete');
+for(var i = 0; i < del.length; i++)
+{
+    del[i].addEventListener('click', function(e){
+        if(!confirm('do you really want to delete this billboard? '))
+        {
+            e.preventDefault();
+            return false;
+        }
+    }, true);
+}
+//-->
+</script>
 <?php include($rep . "php/include/footer.php"); ?>

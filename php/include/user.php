@@ -22,15 +22,34 @@ if(!empty($this_user))
     $u_pp_txt = $this_user['user_pp_text_name'];
     $u_type = $this_user['user_type_name'];
 
-    $now = new DateTime('NOW');
-    function retrieve_duration($_time)
+
+    function elapsed_time($timestamp, $precision = 0) {
+       $time = time() - $timestamp;
+       $a = array('decade' => 315576000, 'year' => 31557600, 'month' => 2629800, 'week' => 604800, 'day' => 86400, 'hour' => 3600, 'min' => 60, 'sec' => 1);
+       $i = 0;
+         foreach($a as $k => $v) {
+           $$k = floor($time/$v);
+           if ($$k) $i++;
+           $time = $i >= $precision ? 0 : $time - $$k * $v;
+           $s = $$k > 1 ? 's' : '';
+           $$k = $$k ? $$k.' '.$k.$s.' ' : '';
+           @$result .= $$k;
+         }
+       return $result ? $result.'ago' : 'just now';
+     }
+
+    function retrieve_duration($_time, $time_z = 0)
     {
+        $now = time();
+        $_time = $now - $_time->getTimestamp();
         $min = 60;
         $hr = 60 * 60;
         $day = $hr * 24;
         $week = $day * 7;
         $month = $day * 31;
         $year = $day * 365;
+
+        $decal = $day * $time_z;
         switch ($_time) {
             case ($_time < $min):
                 $_time = 'just now';
@@ -60,7 +79,7 @@ if(!empty($this_user))
                 $_time = round( $_time) . ' yrs. ago';
                 break;
         }
-        return $_time;
+        return $now . ' ' . $_time->getTimestamp();
     }
 }
 else

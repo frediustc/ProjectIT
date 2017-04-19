@@ -12,7 +12,6 @@ $sb = $selbill->fetch();
     <div class="col-xs-9">
         <div class="action-table box">
             <h1 class="table-title bg-primary text-capitalize box text-center">Add Picture to billboard</h1>
-s
             <div class="img-uploader-box">
             <?php include $rep .'php/script/uploadBillboardImages/Index.php';?>
                 <h1>Related images</h1>

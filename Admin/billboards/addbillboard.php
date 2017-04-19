@@ -39,7 +39,7 @@ include($rep . "php/include/menu.php");
                         <input type="text" name="location" required="" id="loc" class="form-control" placeholder="ex: Labone"/>
                     </div>
                     <div class="col-xs-6">
-                        <label for="price">Price</label>
+                        <label for="price">Price (per month)</label>
                         <div class="input-group">
                             <span class="input-group-addon">Cedis</span>
                             <input type="text" name="price" required="" id="price" class="form-control"  placeholder="ex: 100.00"/>
