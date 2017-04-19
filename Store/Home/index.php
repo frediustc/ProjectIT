@@ -102,10 +102,14 @@ if(isset($_POST['searchAll']))
     <div class="row">
     <?php if (!empty($bills)) {
         while($bill = $bills->fetch())
-        { ?>
+        {
+            $pp = $db->prepare('SELECT * FROM billboards_img WHERE billboards_img_billboard_id = ?');
+            $pp->execute(array($bill['billboard_id']));
+            $p = $pp->fetch();
+            ?>
         <div class="col-md-6 col-lg-3">
             <div class="box crop box-squared-w-h">
-                <img src="<?php echo $rep; ?>media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive center-el-V"/>
+                <img src="<?php echo $rep; ?>media/images/billboards/<?php echo $p['billboard_img_name']; ?>.<?php echo $p['billboard_img_extension']; ?>" alt="Picture Billboards" class="img-responsive center-el-V"/>
                 <div class="infobill text-center trans">
                     <div class="text-block center-el-V">
                         <div class="trans">
@@ -113,7 +117,6 @@ if(isset($_POST['searchAll']))
                             <p class="loc"><span class="glyphicon glyphicon-map-marker"></span><?php echo $bill['billboard_location'] ; ?></p>
                             <p>
                                 <a href="../article/?id=<?php echo $bill['billboard_id'] ; ?>" class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-search"></span></a>
-                                <button class="btn btn-primary bg-primary btn-3d btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span></button>
                             </p>
                         </div>
                     </div>
