@@ -1,4 +1,5 @@
 <?php
+//0545046238 -- dominic
 $page = "Admin Orders";
 $rep = "../../";
 include($rep . "php/include/head.php");
@@ -9,7 +10,7 @@ $o = $db->prepare('SELECT orders.order_id AS o_id, orders.order_date AS o_dt, or
      FROM orders
      INNER JOIN users ON users.user_id = orders.order_user_id
      INNER JOIN billboards ON orders.order_billboard_id = billboards.billboard_id
-     ORDER BY orders.order_date LIMIT 20 ');
+     ORDER BY orders.order_date DESC LIMIT 20 ');
      $o->execute();
 $t = $db->prepare('SELECT
      (select COUNT(*) FROM orders) AS o_mx,
@@ -59,17 +60,19 @@ $_t = $t->fetch();
                 <tbody class="text-center">
                     <?php
                     while($_o = $o->fetch())
-                    { ?>
+                    {
+                    $ordered_date = DateTime::createFromFormat('Y-m-d H:i:s', $_o['o_dt']);
+                     ?>
 
                     <tr>
                         <td class="text-danger">#<?php echo $_o['o_id']; ?></td>
                         <td class="text-capitalize"><?php echo $_o['u_fn']; ?></td>
                         <td class="text-capitalize"><?php echo $_o['u_em']; ?></td>
                         <td class="text-capitalize"><?php echo $_o['b_lo']; ?></td>
-                        <td class="text-capitalize">1<sup>St</sup> March 2017</td>
+                        <td class="text-capitalize"><?php echo retrieve_duration($ordered_date); ?></td>
                         <td class="text-capitalize"><?php echo $_o['o_st']; ?></td>
                         <td>
-                            <a href="../view-billboard/?id=<?php echo $_o['o_id']; ?>" class="btn bg-primary glyphicon glyphicon-eye-open" title="more information"></a>
+                            <a href="./view.php?id=<?php echo $_o['o_id']; ?>" class="btn bg-primary glyphicon glyphicon-eye-open" title="more information"></a>
                             <button class="btn bg-success glyphicon glyphicon-ok" title="validate"></button>
                             <button class="btn bg-danger glyphicon glyphicon-trash" title="delete"></button>
                         </td>
