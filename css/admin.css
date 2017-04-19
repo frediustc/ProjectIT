@@ -34,16 +34,14 @@ body
 {
     color:#fff;
 }
-button[class*="ddfj-"]
+a.icon-display span
 {
-    font-size: 30px;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 25px;
     padding:5px;
     margin: 5px;
     background: transparent;
-}
-button[class*="ddfj-"]:hover, button[class*="ddfj-"]:focus, button[class*="ddfj-"].actived
-{
-    color:#fff;
 }
 .nav
 {

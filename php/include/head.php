@@ -1,6 +1,12 @@
 <?php
 include $rep . 'php/include/connect.php';
 include  $rep . 'php/include/session.php';
+if (preg_match("#Admin#", $page)) {
+    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != 1)
+    {
+        header('location:' . $rep . 'store/');
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

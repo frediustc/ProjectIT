@@ -1,4 +1,5 @@
 <?php
+
 $user = $db->prepare('SELECT u.user_full_name, u.user_password, u.user_email, u.user_account_status,
      u.user_account_pp_bg, up.user_pp_text_name, ut.user_type_name
     FROM users AS u

@@ -4,26 +4,11 @@
     </div>
     <ul class="nav navbar-nav navbar-right text-capitalize">
         <li>
-            <a href="#" class="icon-display" title="Add Billboard">
-                <button class="btn ddfj-addicon"></button>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="icon-display" title="Messages">
-                <button class="btn ddfj-msgicon"></button>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="icon-display" title="Notifications">
-                <button class="btn ddfj-bellicon"></button>
-            </a>
-        </li>
-        <li>
             <a href="#" title="Your Name"><?php echo $u_fn; ?></a>
         </li>
         <li>
-            <a href="#" class="icon-display" title="Account">
-                <button class="btn ddfj-usericon"></button>
+            <a href="<?php echo $rep;?>logout/" class="icon-display" title="Account">
+                <span class="glyphicon glyphicon-log-out"></span>
             </a>
         </li>
     </ul>
