@@ -55,7 +55,11 @@
     </script>
     <?php ($page === "Store Article Page") ? include($rep . 'php/include/store/articleFooter.php') : null; ?>
     <?php ($page === "Admin Billboards") ? include($rep . 'php/include/billboardFooter.php') : null; ?>
-
+    <script>
+    setTimeout(function(){
+        $('.alert').fadeOut(500);
+    },3000);
+    </script>
 </body>
 
 </html>
