@@ -9,10 +9,16 @@ if(isset($_GET['id']) && !empty($_GET['id']) && is_int((int)$_GET['id']) && (int
     $pdcts = $db->prepare('SELECT * FROM billboards WHERE billboard_id = ?');
     $pdcts->execute(array($_GET['id']));
     $pdct = $pdcts->fetch();
+
+    $pp = $db->prepare('SELECT *, (SELECT COUNT(*) FROM billboards_img where billboards_img_billboard_id = :x) AS nbrImg FROM billboards_img WHERE billboards_img_billboard_id = :x');
+    $pp->bindValue(':x', $pdct['billboard_id'], PDO::PARAM_INT);
+    $pp->execute();
+
 }
 else {
     header('location: ../');
 }
+//
 // AIzaSyCKnq0whu8gFu9THGpFyurNy_TNI_pFKyY
 ?>
     <div class="row">
@@ -26,34 +32,51 @@ else {
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
+
+                      <?php $first = true;
+                        $i = 0;
+                        $img = [];
+                        $nbrImg = 0;
+                      while ($p = $pp->fetch()) {
+                          echo '<li data-target="#myCarousel" data-slide-to="'. $i . '" ' . (($first) ? ('class="active"') : '') .'></li>';
+                          $first = false;
+                          $img[$i] = $p['billboard_img_name'] .'.' . $p['billboard_img_extension'];
+                          $i++;
+                          $nbrImg = (int)$p['nbrImg'];
+                     } ?>
+
+
                   </ol>
 
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="<?php echo $rep; ?>media/images/billboards/1.jpg" alt="Picture Billboards" class="img-responsive"/>
-                    </div>
-
-                    <div class="item">
-                        <img src="<?php echo $rep; ?>media/images/billboards/4.png" alt="Picture Billboards" class="img-responsive"/>
-                    </div>
+                      <?php $_first = true;
+                      if($nbrImg > 0)
+                      {
+                          for ($j=0; $j < $nbrImg; $j++) {
+                              $act = ($_first) ? (' active') : '';
+                              echo '<div class="item' . $act .'"><img src="'. $rep . 'media/images/billboards/' . $img[$j] . '" alt="Picture Billboards" class="img-responsive"/> </div>';
+                          $_first = false; }
+                      }
+                      ?>
                   </div>
 
                   <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
+                  <?php if ($nbrImg > 0): ?>
+                      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                  <?php endif; ?>
+
                 </div>
             </div>
-            <div class="box" id="map">
-
+            <div class="box text-center" id="map">
+                <p>No map</p>
             </div>
         </div>
         <div class="col-sm-5 info">
@@ -83,9 +106,24 @@ else {
             <div class="box signopt" id="rent-order">
                 <h2 class="title-box bg-success text-center box">Rents / Orders</h2>
                 <ul class="list-unstyled order-rent-history">
-                    <li class="text-center">Rented from 12/4/2017 to 31/12/2017 <span class="label label-success">actived</span></li>
-                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">pending</span></li>
-                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-success">actived</span></li>
+                    <?php
+                    $ordersview = $db->prepare('SELECT * FROM orders WHERE order_billboard_id = ? AND (order_starting_date >= NOW() OR order_ending_date >= NOW())');
+                    $ordersview->execute(array($pdct['billboard_id']));
+                    $ordercalrem = [];
+                    $i = 0;
+                    while ($order_view = $ordersview->fetch()) {
+                        $label = ($order_view["order_status"] == "pending") ? 'primary' : 'success';
+                        $ordercalrem[$i] = $order_view["order_starting_date"];
+                        $ordercalrem[++$i] = $order_view["order_ending_date"];
+                        $i++;
+                        // $start_date = new DateTime::createFormatfr
+                        // $rent_or_order = ($order_view['order_starting_date']->getTimestamp() <= now) ? '' : '';
+                        echo '<li class="text-center">used from '. $order_view["order_starting_date"] .' to '. $order_view["order_ending_date"] .' <span class="label label-'.$label.'">'. $order_view["order_status"] .'</span></li>';
+                    }
+                    ?>
+
+                    <!-- <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-primary">pending</span></li>
+                    <li class="text-center">Ordered from 12/4/2017 to 31/12/2017 <span class="label label-success">actived</span></li> -->
                 </ul>
             </div>
             <?php if(!isset($_SESSION['user_id']))

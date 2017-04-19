@@ -1,5 +1,8 @@
+<?php //$inter = $db->prepare('SELECT * FROM orders WHERE order_billboard_id = ?') ?>
 <script>
-    var listDate = [[new Date('2017-04-11'), new Date('2017-04-14')], [new Date('2017-04-16'), new Date('2017-05-18')]];
+    var listDate = [<?php for ($i=0; $i < count($ordercalrem) ; $i++) { ?>
+        [new Date('<?php echo $ordercalrem[$i]; ?>'), new Date('<?php echo $ordercalrem[++$i]; ?>')],
+    <?php } ?> [new Date('0001-01-01'), new Date('0001-01-02')]];
     var disabledList = function (listDate)
     {
         var _list = [];

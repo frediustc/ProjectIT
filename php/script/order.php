@@ -31,7 +31,6 @@ if(isset($_POST['orderitnow']))
          $orderid =  GeraHash(6);
      }
      while(!empty($mc = $db->query('SELECT * FROM orders WHERE order_id = $orderid')));
-
     $i = $db->prepare('INSERT INTO orders(order_id, order_date, order_user_id, order_starting_date, order_ending_date, order_billboard_id, order_status) VALUES(?, NOW(), ?, ?, ?, ?, "pending")');
     if($i->execute(array($orderid, $u_id, $sd, $ed, $_GET['id'])))
     {

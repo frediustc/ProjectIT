@@ -58,7 +58,7 @@
     <script>
     setTimeout(function(){
         $('.alert').fadeOut(500);
-    },3000);
+    },5000);
     </script>
 </body>
 
