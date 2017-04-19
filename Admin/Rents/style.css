@@ -1,0 +1,40 @@
+
+.alert-info-box
+{
+    padding:20px 50px;
+}
+.img-uploader-box, .img-info-box
+{
+    padding:40px;
+}
+
+.view-posted-img
+{
+    display: flex;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+.view-posted-img li
+{
+    display: flex;
+    min-width:50%;
+}
+.gen-info-box
+{
+    margin-top: 85px;
+    padding:40px 20px;
+}
+.info
+{
+    margin:20px 0;
+}
+.gen-info-box h1
+{
+    margin-top: 0;
+}
+.h1
+{
+    font-weight: 100;
+    padding:0;
+    margin:0;
+}

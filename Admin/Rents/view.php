@@ -1,5 +1,5 @@
 <?php
-$page = "Admin Orders";
+$page = "Admin Rents";
 $rep = "../../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
@@ -14,7 +14,7 @@ $order = $orders->fetch();
 <div class="row">
     <div class="col-xs-9">
         <div class="action-table box">
-            <h1 class="table-title bg-alt text-capitalize box text-center">View Billboard Related images</h1>
+            <h1 class="table-title bg-success text-capitalize box text-center">View Billboard Related images</h1>
             <div class="img-info-box">
                 <ul class="list-unstyled list-inline view-posted-img">
                     <?php $img_bill_view_all = $db->prepare('SELECT * FROM billboards_img WHERE billboards_img_billboard_id = ?');
@@ -27,7 +27,7 @@ $order = $orders->fetch();
         </div>
         <div class="box">
             <div class="gen-info-box">
-                <h1 class="table-title bg-alt text-capitalize box text-center">General information</h1>
+                <h1 class="table-title bg-success text-capitalize box text-center">General information</h1>
                 <div class="row">
                   <div class="col-xs-6 info">
                       <h3><strong>Customer Full Name</strong></h3>
@@ -40,11 +40,11 @@ $order = $orders->fetch();
                 </div>
                 <div class="row">
                   <div class="col-xs-6 info">
-                      <h3><strong>Order starting date</strong></h3>
+                      <h3><strong>Rented from</strong></h3>
                       <p class="h1"><?php echo $order['order_starting_date']; ?></p>
                   </div>
                   <div class="col-xs-6 info text-right">
-                      <h3><strong>Order ending date</strong></h3>
+                      <h3><strong>Rented to</strong></h3>
                       <p class="h1"><?php echo $order['order_ending_date']; ?></p>
                   </div>
                 </div>
