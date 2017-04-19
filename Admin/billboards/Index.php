@@ -5,26 +5,31 @@ include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
 
 include 'delete.php';
-$selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date DESC LIMIT 20 ');
+$cnt = $db->prepare('SELECT (SELECT COUNT(*) AS b_max FROM billboards) AS b_max,
+ (SELECT COUNT(*) AS b_took FROM billboards WHERE billboard_availability !="available") AS b_took,
+ (SELECT COUNT(*) AS b_free FROM billboards WHERE billboard_availability ="available") AS b_free
+FROM billboards ');
+ $cnt->execute();
+$c = $cnt->fetch();
 ?>
 
 <div class="row">
     <div class="col-sm-4">
         <div class="box box-left box-primary general-info-table-top box-round">
             <p class="text-capitalize no-margin general-info-table-top-title"><strong>Total Billboards</strong></p>
-            <h1 class="no-margin text-primary">2000</h1>
+            <h1 class="no-margin text-primary"><?php echo $c['b_max']; ?></h1>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="box box-left box-warning general-info-table-top box-round">
-            <p class="text-capitalize no-margin general-info-table-top-title"><strong>Rented Billboards</strong></p>
-            <h1 class="no-margin text-warning">1300</h1>
+            <p class="text-capitalize no-margin general-info-table-top-title"><strong>order and rented Billboards</strong></p>
+            <h1 class="no-margin text-warning"><?php echo $c['b_took']; ?></h1>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="box box-left box-success general-info-table-top box-round">
             <p class="text-capitalize no-margin general-info-table-top-title"><strong>Available Billboards</strong></p>
-            <h1 class="no-margin text-success">700</h1>
+            <h1 class="no-margin text-success"><?php echo $c['b_free']; ?></h1>
         </div>
     </div>
 </div>
@@ -35,6 +40,7 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date DES
             <h1 class="table-title bg-primary text-capitalize box text-center">Posted Billboards</h1>
             <p class="text-right addbill"><a href="./addbillboard.php" class="btn-3d btn-lg btn btn-success bg-success">Add Billboards</a></p>
             <?php
+            $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date DESC LIMIT 20 ');
             if (!empty($selbill)) { ?>
                 <table class="data-table table table-hover">
                     <thead>
@@ -59,7 +65,7 @@ $selbill = $db->query('SELECT * FROM billboards ORDER BY billboard_post_date DES
                     <tr>
                         <td class="text-danger">#<?php echo $eachbill['billboard_id']; ?></td>
                         <td class="text-capitalize"><?php echo $eachbill['billboard_location']; ?></td>
-                        <td class="text-capitalize"><?php echo elapsed_time($posted_date->getTimestamp()); ?></td>
+                        <td class="text-capitalize"><?php echo retrieve_duration($posted_date); ?></td>
                         <td class="text-capitalize"><?php echo $count['ct']; ?></td>
                         <td class="text-capitalize"><?php echo ($eachbill['billboard_map_lat'] > 0 && $eachbill['billboard_map_lon'] > 0 && $eachbill['billboard_map_zoom'] > 0) ? 'yes' : 'no'; ?></td>
                         <td class="text-capitalize"><?php echo $eachbill['billboard_availability']; ?></td>

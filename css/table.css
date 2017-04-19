@@ -61,3 +61,9 @@ tr.read, .table.table-hover tr.read:hover
 {
     background-color: #eee;
 }
+form.btn-form
+{
+    margin:0;
+    padding:0;
+    display:inline-block;
+}
