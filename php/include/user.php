@@ -17,6 +17,7 @@ if(!empty($this_user))
     $u_fn = $this_user['user_full_name'];
     $u_pass = $this_user['user_password'];
     $u_email = $this_user['user_email'];
+    $u_status = $this_user['user_account_status'];
     $u_email_chk = (strlen($u_email) > 20) ? (substr($u_email, -(strlen($u_email)), (strlen($u_email)) - (strlen($u_email) - 20))) : $u_email;
     $u_actived = ($this_user['user_account_status'] === 'actived') ? true : false;
     $u_pp_bg = $this_user['user_account_pp_bg'];

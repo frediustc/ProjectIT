@@ -129,16 +129,16 @@ else {
             <?php if(!isset($_SESSION['user_id']))
                 { ?>
                 <div class="box signopt">
-                    <h2 class="title-box bg-primary text-center box">Sign to order</h2>
+                    <h3 class="title-box bg-primary text-center box">Sign to order</h3>
                     <ul class="list-unstyled option-log">
-                        <li class="text-center"><button class="btn btn-success bg-success box-rounded" data-toggle="modal" data-target="#signin">Sign In</button></li>
+                        <li class="text-center"><button class="btn btn-success bg-success box-rounded" data-toggle="modal" data-target="#signinArt">Sign In</button></li>
                         <li>
                             <p class="legend legend-center"><span class="legend-text">or</span></p>
                         </li>
-                        <li class="text-center"><button class="btn btn-primary bg-primary box-rounded" data-toggle="modal" data-target="#signup">Sign Up</button></li>
+                        <li class="text-center"><button class="btn btn-primary bg-primary box-rounded" data-toggle="modal" data-target="#signupArt">Sign Up</button></li>
                     </ul>
                 </div>
-                <div id="signup" class="modal fade" role="dialog">
+                <div id="signupArt" class="modal fade" role="dialog">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header text-center">
@@ -174,7 +174,7 @@ else {
                     </div>
                   </div>
                 </div>
-                <div id="signin" class="modal fade" role="dialog">
+                <div id="signinArt" class="modal fade" role="dialog">
 
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -203,7 +203,7 @@ else {
                     </div>
                   </div>
                 </div>
-        <?php } ?>
+                <?php } ?>
             <?php if(isset($_SESSION['user_id']))
             { ?>
             <div class="box signopt">

@@ -59,3 +59,37 @@ p.alert
 {
     color:white;
 }
+
+.option-log
+{
+    padding:20px;
+}
+button.btn
+{
+    display: inline-block;
+    border:none;
+    width:100%;
+    padding:10px 30px;
+}
+.option-log li
+{
+    margin:0 0 20px 0;
+}
+.option-log .legend
+{
+    padding: 0;
+    margin:0;
+    width:50%;
+    margin:auto;
+}
+.title-box
+{
+    position: relative;
+    width:80%;
+    margin:auto;
+    top:-25px;
+    margin-top: 30px;
+    font-weight: 100;
+    padding:10px 0;
+    color:white;
+}
