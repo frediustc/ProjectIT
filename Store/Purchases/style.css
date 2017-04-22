@@ -16,3 +16,40 @@ h1
 {
     font-weight: 100;
 }
+
+.view-posted-img
+{
+    overflow-x: scroll;
+}
+.view-posted-img li
+{
+    display: inline-block;
+    max-width: 300px;
+}
+.gen-info-box
+{
+    margin-top: 85px;
+    padding:40px 20px;
+}
+.info
+{
+    margin:20px 0;
+}
+.gen-info-box h1
+{
+    margin-top: 0;
+}
+.h1
+{
+    font-weight: 100;
+    padding:0;
+    margin:0;
+}
+.alert-info-box
+{
+    padding:20px 50px;
+}
+.img-uploader-box, .img-info-box
+{
+    padding:40px;
+}

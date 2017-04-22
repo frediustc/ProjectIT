@@ -40,14 +40,6 @@
             </a>
         </li>
         <li>
-            <a href="../Reports/" class="<?php echo ($page === 'Admin Reports') ? 'actived' : null;?>">
-                <span class="text-block-middle">
-                    <span class="ddfj-reporticon"></span>
-                    <span class="text-icon">Reports</span>
-                </span>
-            </a>
-        </li>
-        <li>
             <a href="../Orders/" class="<?php echo ($page === 'Admin Orders') ? 'actived' : null;?>">
                 <span class="text-block-middle">
                     <span class="ddfj-ordericon"></span>
@@ -58,7 +50,7 @@
         <li>
             <a href="../Rents/" class="<?php echo ($page === 'Admin Rents') ? 'actived' : null;?>">
                 <span class="text-block-middle">
-                    <span class="ddfj-ordericon"></span>
+                    <span class="ddfj-reporticon"></span>
                     <span class="text-icon">Rents</span>
                 </span>
             </a>
