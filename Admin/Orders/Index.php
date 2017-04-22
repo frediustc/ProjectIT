@@ -4,7 +4,6 @@ $page = "Admin Orders";
 $rep = "../../";
 include($rep . "php/include/head.php");
 include($rep . "php/include/menu.php");
-
 $t = $db->prepare('SELECT
      (select COUNT(*) FROM orders) AS o_mx,
      (select COUNT(*) FROM orders WHERE order_status = "actived") AS o_ac,
