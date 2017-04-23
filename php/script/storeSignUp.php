@@ -37,18 +37,17 @@ if(isset($_POST['reg']))
              if (empty($ex)) {
                  if (preg_match("#^[a-z0-9._\-]{6,32}$#", $psw)) {
                      if ($psw === $c) {
-                         $exp = explode(' ', $fn);
+                         $exp = explode(' ', $input);
                          $ppTxt = strtoupper($exp[0][0] . $exp[1][0]);
-                         echo $ppTxt;
                          $ptxtCheck = $db->prepare('SELECT * FROM user_pp_text WHERE user_pp_text_name = ?');
                          $ptxtCheck->execute(array($ppTxt));
-                         if (empty($ptxtCheck)) {
+                         if (empty($ptxtCheckthis = $ptxtCheck->fetch())) {
                              $ptxtins = $db->prepare('INSERT INTO user_pp_text(user_pp_text_name) VALUES (?)');
                              $ptxtins->execute(array($ppTxt));
                              $ppTxt = $db->lastInsertId();
                          }
                          else {
-                             $ptxtCheckthis = $ptxtCheck->fetch();
+                             // $ptxtCheckthis = $ptxtCheck->fetch();
                              $ppTxt = $ptxtCheckthis['user_pp_text_id'];
                          }
 

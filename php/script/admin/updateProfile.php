@@ -5,7 +5,27 @@ if($u_actived)
     $alert_error = '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>';
     function applyUpdate($type, $input, $db, $u_id, $alert_success, $alert_error, $error)
     {
-        $up = $db->prepare('UPDATE users SET ' . $type . ' = :x WHERE user_id = :y');
+        if($type === 'user_full_name')
+        {
+            $exp = explode(' ', $input);
+            $ppTxt = strtoupper($exp[0][0] . $exp[1][0]);
+            $ptxtCheck = $db->prepare('SELECT * FROM user_pp_text WHERE user_pp_text_name = ?');
+            $ptxtCheck->execute(array($ppTxt));
+            if (empty($ptxtCheckthis = $ptxtCheck->fetch())) {
+                $ptxtins = $db->prepare('INSERT INTO user_pp_text(user_pp_text_name) VALUES (?)');
+                $ptxtins->execute(array($ppTxt));
+                $ppTxt = $db->lastInsertId();
+            }
+            else {
+                // $ptxtCheckthis = $ptxtCheck->fetch();
+                $ppTxt = $ptxtCheckthis['user_pp_text_id'];
+            }
+            $up = $db->prepare('UPDATE users SET ' . $type . ' = :x, user_pp_text_id = :z  WHERE user_id = :y');
+            $up->bindValue(':z', $ppTxt, PDO::PARAM_INT);
+        }
+        else {
+            $up = $db->prepare('UPDATE users SET ' . $type . ' = :x WHERE user_id = :y');
+        }
         $up->bindValue(':x', $input, PDO::PARAM_STR);
         $up->bindValue(':y', $u_id, PDO::PARAM_INT);
         $up->execute();

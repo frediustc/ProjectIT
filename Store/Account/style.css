@@ -1,3 +1,12 @@
+.pp-account
+{
+    width:100px;
+    line-height: 100px;
+    display: inline-block;
+    color:white;
+    margin-bottom: 20px;
+    text-align: center;
+}
 .editProf form
 {
     padding: 40px;

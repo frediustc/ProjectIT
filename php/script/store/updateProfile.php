@@ -5,7 +5,27 @@ if($u_actived)
     $alert_error = '<p class="alert bg-danger"><span class="glyphicon glyphicon-warning-sign"></span>';
     function applyUpdate($type, $input, $db, $u_id, $alert_success, $alert_error, $error)
     {
-        $up = $db->prepare('UPDATE users SET ' . $type . ' = :x WHERE user_id = :y');
+        if($type === 'user_full_name')
+        {
+            $exp = explode(' ', $input);
+            $ppTxt = strtoupper($exp[0][0] . $exp[1][0]);
+            $ptxtCheck = $db->prepare('SELECT * FROM user_pp_text WHERE user_pp_text_name = ?');
+            $ptxtCheck->execute(array($ppTxt));
+            if (empty($ptxtCheckthis = $ptxtCheck->fetch())) {
+                $ptxtins = $db->prepare('INSERT INTO user_pp_text(user_pp_text_name) VALUES (?)');
+                $ptxtins->execute(array($ppTxt));
+                $ppTxt = $db->lastInsertId();
+            }
+            else {
+                // $ptxtCheckthis = $ptxtCheck->fetch();
+                $ppTxt = $ptxtCheckthis['user_pp_text_id'];
+            }
+            $up = $db->prepare('UPDATE users SET ' . $type . ' = :x, user_pp_text_id = :z  WHERE user_id = :y');
+            $up->bindValue(':z', $ppTxt, PDO::PARAM_INT);
+        }
+        else {
+            $up = $db->prepare('UPDATE users SET ' . $type . ' = :x WHERE user_id = :y');
+        }
         $up->bindValue(':x', $input, PDO::PARAM_STR);
         $up->bindValue(':y', $u_id, PDO::PARAM_INT);
         $up->execute();
@@ -24,6 +44,20 @@ if($u_actived)
 
                 case  'user_full_name' :
                     (preg_match("#^[a-zA-Z \-]{5,70}$#", $input)) ? applyUpdate($type, $input, $db, $u_id, $alert_success, $alert_error, $error) : print $alert_error . $error . 'full name wrong format</p>';
+
+                    $exp = explode(' ', $input);
+                    $ppTxt = strtoupper($exp[0][0] . $exp[1][0]);
+                    $ptxtCheck = $db->prepare('SELECT * FROM user_pp_text WHERE user_pp_text_name = ?');
+                    $ptxtCheck->execute(array($ppTxt));
+                    if (empty($ptxtCheckthis = $ptxtCheck->fetch())) {
+                        $ptxtins = $db->prepare('INSERT INTO user_pp_text(user_pp_text_name) VALUES (?)');
+                        $ptxtins->execute(array($ppTxt));
+                        $ppTxt = $db->lastInsertId();
+                    }
+                    else {
+                        // $ptxtCheckthis = $ptxtCheck->fetch();
+                        $ppTxt = $ptxtCheckthis['user_pp_text_id'];
+                    }
                     break;
 
                 case 'user_email' :
@@ -67,9 +101,9 @@ if($u_actived)
         }
     }
 
-    if(isset($_POST['update-profile']) && isset($_POST['psw']) && !empty($_POST['psw']))
+    if(isset($_POST['passinfos']) && isset($_POST['pass']) && !empty($_POST['pass']))
     {
-        if(sha1(htmlspecialchars(trim($_POST['psw']))) === $u_pass)
+        if(sha1(htmlspecialchars(trim($_POST['pass']))) === $u_pass)
         {
             switch ($_POST)
             {
@@ -77,10 +111,8 @@ if($u_actived)
                     updateInfo('user_account_pp_bg', $_POST['color-pick'], $db, $u_id, $alert_success, $alert_error);
                 case isset($_POST['fn']) && !empty($_POST['fn']) :
                     updateInfo('user_full_name', $_POST['fn'], $db, $u_id, $alert_success, $alert_error);
-                case isset($_POST['mail']) && !empty($_POST['mail']) :
-                    updateInfo('user_email', $_POST['mail'], $db, $u_id, $alert_success, $alert_error);
-                case isset($_POST['n-psw']) && !empty($_POST['n-psw']) :
-                    updateInfo('user_password', $_POST['n-psw'], $db, $u_id, $alert_success, $alert_error);
+                case isset($_POST['em']) && !empty($_POST['em']) :
+                    updateInfo('user_email', $_POST['em'], $db, $u_id, $alert_success, $alert_error);
             }
         }
         else
