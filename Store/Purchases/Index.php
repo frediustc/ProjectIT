@@ -5,6 +5,7 @@ $page = "Store Purchases Page";
 
 include $rep . 'php/include/head.php';
 include $rep . 'php/include/store/menu.php';
+
 if(!isset($_SESSION['user_id']))
 {
     header('location: ../');
@@ -42,6 +43,7 @@ else {
 </div>
 
 <div class="row">
+    <?php include './delete.php'; ?>
     <div class="col-xs-12">
         <div class="action-table box">
             <h1 class="table-title bg-alt text-capitalize box text-center">Billboards Purchases</h1>
@@ -88,6 +90,7 @@ else {
                             <a href="./view.php?id=<?php echo $_o['o_id']; ?>" class="btn bg-primary glyphicon glyphicon-eye-open" title="more information"></a>
 
                             <form class="btn-form form-inline" action="./" method="post">
+                                <input type="hidden" name="uid" value="<?php echo $u_id; ?>">
                                 <button type="submit" name="delete" value="<?php echo $_o['o_id']; ?>" class="btn bg-danger glyphicon glyphicon-trash" title="delete"></button>
                             </form>
                         </td>
